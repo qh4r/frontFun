@@ -73,6 +73,7 @@ p {
     float: left;
     width: 75%;
     background-color: #e0ff9c;
+    position: relative;
 }
 
 .other-posts {
@@ -84,4 +85,24 @@ p {
     /*top right bottom left*/
     margin: 20px auto 10px auto;
     background-color: #ffd6c1;
+}
+
+.other {
+    margin-bottom: 40px;
+}
+
+.foot img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.foot-text {
+    float: right;
+}
+
+.date{
+    position: absolute;
+    right: 30px;
+    top: 10px
 }

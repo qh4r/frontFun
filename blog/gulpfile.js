@@ -9,5 +9,5 @@ gulp.task('default', function(){
 
 gulp.task('reload',function(){
     gulp.src('./*.html').pipe(livereload());
-    livereload('./*.css').pipe(livereload());
+    //gulp.src('./*.css').pipe(livereload());
 })
