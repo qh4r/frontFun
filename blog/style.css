@@ -100,7 +100,7 @@ p {
 .foot-text {
     float: right;
 }
-
+/*ABSOLUTE W RELATIVE -- MAGIC <3*/
 .date{
     position: absolute;
     right: 30px;
