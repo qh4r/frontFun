@@ -113,6 +113,9 @@ h1 {
 /*BUTTONS END*/
 /*/////////*/
 
+/*//////////*/
+/*NAVBAR*/
+/*///////// */
 .logo{
     height: 100px;
     width: auto;
@@ -148,7 +151,21 @@ h1 {
     border-bottom: 2px solid #e67e22;
 }
 
+/*//////////*/
+/*NAVBAR END*/
+/*///////// */
 
+/*//////////*/
+/*SECTIONS*/
+/*///////// */
+
+.section-features {
+    height: 100vh;
+}
+
+/*//////////*/
+/*SECTIONS*/
+/*///////// */
 
 /*///////*/
 /*TRASH*/
