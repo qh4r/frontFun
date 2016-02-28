@@ -55,6 +55,12 @@ h1 {
     word-spacing: 4px;
 }
 
+
+/*/////////*/
+/*BUTTONS*/
+/*/////////*/
+
+
 /*link visited to obsluga wygladu linkow*/
 .btn:link,
 .btn:visited{
@@ -74,24 +80,80 @@ h1 {
     border: 1px solid #e67e22;
 }
 
-.btn-ghost:link,
-.btn-ghost:visited{
-    background-color: transparent;
-    border: 1px solid #8aacff;
-}
-
-.btn:hover{
+.btn-full:hover{
     background-color: #cf6d17;
     border:1px solid #cf6d17;
 }
 
-.btn:active{
+.btn-full:active{
     background-color: #bf6516;
     border: 1px solid #bf6516;
 }
 
+.btn-ghost:link,
+.btn-ghost:visited{
+    background-color: transparent;
+    color: #8aacff;
+    border: 1px solid #8aacff;
+}
+
+.btn-ghost:hover{
+    color: #6894ff;
+    border: 1px solid #6894ff;
+}
+
+.btn-ghost:active {
+    color: #fff;
+    border: 1px solid #6894ff;
+    background: #6894ff;
+}
 
 
+/*/////////*/
+/*BUTTONS END*/
+/*/////////*/
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin: 20px 0 0 0;
+}
+
+.main-nav{
+    float: right;
+    margin: 50px 0 0 0;
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin: 0 0 0 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    transition: border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding: 8px 0;
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*czyli 18 px (wzgledem html)*/
+    font-size: 90%;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+
+
+
+/*///////*/
+/*TRASH*/
+/*///////*/
 .box-red {
     background-color: red;
     width: 50%;
