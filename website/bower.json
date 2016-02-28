@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Rafał Kucharski <r.kucharski@lgbs.pl>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/qh4r/frontFun",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}

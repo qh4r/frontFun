@@ -4,8 +4,8 @@ var gulp = require('gulp'),
 gulp.task('default', function(){
     livereload.listen();
     gulp.watch('./*.html', ['reload']);
-    gulp.watch('./css/*.css', ['reload']),
-    gulp.watch('./js/*.js', ['reload']);
+    gulp.watch('./resources/css/*.css', ['reload']),
+    gulp.watch('./resources/js/*.js', ['reload']);
 })
 
 gulp.task('reload',function(){
