@@ -16,6 +16,11 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+/*//COMMON ELEMENTS//*/
+section {
+    padding: 80px 0;
+}
+
 .row {
     max-width: 1140px;
     /*margin-left: auto;*/
@@ -25,6 +30,8 @@ html {
     /*top+bottom left+right*/
     margin: 0 auto;
 }
+
+/*COMMON ELEMENTS END*/
 
 header {
     /*Gradient funkcjonuje jak obrazek*/
@@ -44,17 +51,78 @@ header {
     transform: translate(-50%, -50%);
 }
 
-h1 {
-    margin: 0 0 20px;
-    color: #fff;
+.box {
+    padding: 1%;
+}
+
+/*//HEADINGS//*/
+
+h1, h2, h3 {
     /*czyli 40px, bo bazowa to 20px*/
-    font-size: 240%;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 240%;
     word-spacing: 4px;
 }
 
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+h3 {
+    font-size: 110%;
+    margin: 0 0 15px 0;
+    letter-spacing: 0px;
+}
+
+/*after pozwala dodac element przy pomocy cssa*/
+h2:after {
+    display: block;
+    width: 80%;
+    margin: 10px auto 0 auto;
+    height: 2px;
+    content: "";
+    background-color: #e67e22;
+}
+
+/*//HEADINGS END//*/
+
+/*  PARAGRAPHS  */
+
+.long-copy {
+    line-height: 145%;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/*  PARAGRAPHS END */
+
+
+/*  ICONS   */
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+
+/*  ICONS END  */
 
 /*/////////*/
 /*BUTTONS*/
