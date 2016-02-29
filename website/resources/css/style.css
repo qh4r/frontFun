@@ -235,6 +235,8 @@ h2:after {
 .section-meals {
     padding: 0;
 }
+
+
 /*//////////*/
 /*SECTIONS*/
 /*///////// */
@@ -274,6 +276,11 @@ h2:after {
     transform: scale(1.05);
 }
 /*  MEALS END  */
+
+/* STEPS */
+
+
+/* STEPS END*/
 
 /*///////*/
 /*TRASH*/
