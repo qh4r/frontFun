@@ -45,7 +45,8 @@ header {
 
 .hero-text-box {
     position: absolute;
-    width: 1140px;
+    max-width: 1140px;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -231,9 +232,48 @@ h2:after {
     height: 100vh;
 }
 
+.section-meals {
+    padding: 0;
+}
 /*//////////*/
 /*SECTIONS*/
 /*///////// */
+
+/*  MEALS  */
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+}
+
+.meals-showcase li {
+    float: left;
+    width: 25%;
+    display: block;
+    height: auto;
+}
+
+.meal-photo {
+    background-color: #000;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;;
+}
+
+.meal-photo img {
+    opacity: 0.6;
+    width: 100%;
+    height: auto;
+    transform: scale(1.20);
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+/*  MEALS END  */
 
 /*///////*/
 /*TRASH*/
