@@ -42,7 +42,7 @@ header {
     /*Gradient funkcjonuje jak obrazek*/
     /*tutaj użyty tylko 1 kolor na początku i końcu*/
     /*jest częściowo przezroczysty i znajduje się nad obrazkiem tła*/
-    background-image: lcinear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)) ,url(images/hero.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)) ,url(images/hero.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
