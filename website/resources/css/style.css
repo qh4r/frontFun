@@ -329,6 +329,11 @@ h2:after {
     margin: 0 10px 0;
 }
 
+.btn-app:link,
+.btn-app:visited {
+    border: 0px;
+}
+
 .works-step:last-of-type{
     margin-bottom: 80px;
 }
@@ -346,10 +351,16 @@ h2:after {
     margin: 0 10px 0;
     font-size: 160%;
     float: left;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    line-height: 100%;
+    vertical-align: middle;
 }
 
 .city-feature{
     clear: left;
+    margin: 0 0 5px;
 }
 
 .city-feature:last-of-type{
@@ -359,10 +370,32 @@ h2:after {
 .city-snapshot img {
     width: 100%;
     height: auto;
+    margin: 0 0 15px 0;
 }
 
 
 /* CITIES END*/
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid #e67e22;
+    padding: 0 0 3px;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+a:hover {
+    color: #555;
+    border-bottom: 1px solid #555;
+
+}
+
+/*LINKS*/
+
+
+
+/*LINKS END*/
 
 /*///////*/
 /*TRASH*/
