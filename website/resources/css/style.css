@@ -399,13 +399,14 @@ a:hover {
 /*  TESTIMONIALS */
 
 .section-testimonials {
-    background-image: linear-gradient(
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0.8)),
-            url(images/back-customers.jpg);
     height: 100vh;
     color: #fff;
-    background-attachment: fixed;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8)),
+    url(images/back-customers.jpg) fixed;
+    /* to fixed oznacza : */
+    /*background-attachment: fixed;*/
 }
 
 blockquote {
