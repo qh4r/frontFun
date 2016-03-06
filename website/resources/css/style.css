@@ -450,6 +450,63 @@ blockquote:after{
     color: #e67e22;
 }
 
+
+/* SECTION PLANS */
+
+.section-plans {
+    background-color: #EEE;
+}
+
+.plan-box {
+    background-color: #FFF;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #e1e1e1;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid #EEE;
+}
+
+.plan-price {
+    font-size: 200%;
+    font-weight: 100;
+    margin: 0 0 10px;
+    color: #e67e22;
+}
+
+.plan-price span{
+    /* ZMNIEJSZANA DO 50% JEST AKTUALNA WIELKOSC CZYLI 200% Z BAZOWEJ HTML*/
+    font-size: 50%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+}
+
+.plan-box div:first-child {
+    background-color: #f8f8f8;
+    border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+}
+
+/* SECTION PLANS END */
+
 /*  TESTIMONIALS END*/
 /*///////*/
 /*TRASH*/
