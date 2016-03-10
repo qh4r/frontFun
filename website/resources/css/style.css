@@ -545,6 +545,85 @@ input[type=checkbox] {
 
 /* SECTION FORMS END*/
 
+/* FOOTER */
+
+footer {
+    background-color: #333;
+    font-size: 80%;
+}
+
+.float-nav {
+    list-style: none;
+    flaot: left;
+}
+
+.social-links {
+    list-style:none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin: 5px 20px 0;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    display: inline-block;
+    margin: 5px 0 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    border: none;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #AAA;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+.ion-social-facebook-outline,
+.ion-social-twitter-outline,
+.ion-social-googleplus-outline,
+.ion-social-instagram-outline {
+    transition: color 0.4s;
+}
+.ion-social-facebook-outline:hover {
+    color: #364ccc;
+}
+
+.ion-social-twitter-outline:hover {
+    color: #2230cc;
+}
+
+.ion-social-googleplus-outline:hover{
+    color:#cc484c;
+}
+
+.ion-social-instagram-outline:hover {
+    color:#633711
+}
+footer p {
+    color: #666;
+    text-align: center;
+    margin: 50px 0px 20px;
+    font-size: 100%;
+}
+
+/* FOOTER END*/
+
+
 /*  TESTIMONIALS END*/
 /*///////*/
 /*TRASH*/
