@@ -1,0 +1,38 @@
+/* bog tablets */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+        transform: translate(-50%, -50%);
+    }
+
+    .row {
+        padding: 0 2%;
+    }
+}
+
+/* tablets */
+@media only screen and (max-width: 1023px) {
+    body {
+        font-size: 18px;
+    }
+    section {
+        padding: 40px 0;
+    }
+
+    .long-copy {
+        width: 80%;
+        margin: 0 0 0 10%;
+    }
+
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+
+}
+
+/* Small phones */
+@media only screen and (max-width: 480px) {
+
+}
