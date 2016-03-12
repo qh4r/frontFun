@@ -14,6 +14,7 @@ html {
     /*tej wartości (tu ustawionej - 20px)jako bazowej*/
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 /*//COMMON ELEMENTS//*/
