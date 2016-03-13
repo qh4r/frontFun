@@ -229,6 +229,63 @@ input[type=submit]:active{
     border-bottom: 2px solid #e67e22;
 }
 
+/*UKRYWA LOGO NA STALE*/
+.logo-black {
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+
+/*JESLI LOGO ZNAJDUJE SIE */
+/*W KLASIE STICKY - POKAZUJE SIE*/
+.sticky .logo-black {
+    display: block;
+}
+
+/* BIALE LOGO UKRYWA SIE W */
+/* KLASIE STICKY*/
+.sticky .logo {
+    display: none;
+}
+
+/* STICKY NAV */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 2px #efefef;
+    /*wyzszy z index daje wyzsza warstwe*/
+    z-index: 9999;
+}
+
+.sticky .main-nav {
+    float: right;
+    margin: 15px 0 0 0;
+    list-style: none;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    transition: border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding: 8px 0;
+    color: #222;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*czyli 18 px (wzgledem html)*/
+    font-size: 90%;
+}
+
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
 /*//////////*/
 /*NAVBAR END*/
 /*///////// */
