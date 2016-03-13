@@ -687,4 +687,16 @@ footer p {
 /*TRASH*/
 /*///////*/
 
+/*dla animate.css poczatkowa niewidoczna
+i po animacji widoczna*/
+.js-way-point-1 {
+    opacity: 0;
+    /*opcjonalnie :*/
+    animation-duration: 1s;
+}
+
+.js-way-point-1.animated {
+    opacity: 1;
+}
+
 /*ORANGE:   #e67e22 */

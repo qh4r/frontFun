@@ -8,6 +8,7 @@
     </title>
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" type="text/css">
     <link rel="stylesheet" href="vendors/css/grid.css" type="text/css">
+    <link href="vendors/css/animate.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="resources/css/style.css" type="text/css">
     <link rel="stylesheet" href="vendors/css/ionicons.min.css" type="text/css">
     <link rel="stylesheet" href="resources/css/queries.css" type="text/css">
@@ -19,21 +20,21 @@
             <img src="resources/images/logo-white.png" alt="logo" class="logo">
             <img src="resources/images/logo.png" alt="logo" class="logo-black">
             <ul class="main-nav">
-                <li><a href="#">Dostawa jedzenia</a></li>
-                <li><a href="#">Jak to dzia³a</a></li>
-                <li><a href="#">Miasta</a></li>
-                <li><a href="#">Rejestracja</a></li>
+                <li><a href="#features">Dostawa jedzenia</a></li>
+                <li><a href="#works">Jak to dzia³a</a></li>
+                <li><a href="#cities">Miasta</a></li>
+                <li><a href="#register">Rejestracja</a></li>
             </ul>
         </div>
     </nav>
     <div class="hero-text-box">
         <h1>Po¿egnaj niezdrowe jedzenie.<br/> Jedz zdrowo.</h1>
-        <a class="btn btn-full" href="#">Jestem g³odny</a>
-        <a class="btn btn-ghost" href="#">Poka¿ wiêcej</a>
+        <a class="btn btn-full scroll-to-plan" href="#">Jestem g³odny</a>
+        <a class="btn btn-ghost scroll-to-start" href="#">Poka¿ wiêcej</a>
     </div>
 
 </header>
-<section class="section-features js--section-features">
+<section id="features" class="section-features js--section-features">
     <div class="row">
         <h2>Dostañ jedzenie szybko, a nie jedzenie na szybko</h2>
 
@@ -44,7 +45,7 @@
             Zadwoñ ju¿ dzi¶!</p>
 
     </div>
-    <div class="row">
+    <div class="row js-way-point-1">
         <div class="col span-1-of-4 box">
             <i class="ion-ios-loop icon-big"></i>
             <h3>365 dni w roku</h3>
@@ -77,7 +78,7 @@
         </div>
     </div>
 </section>
-<section class="section-meals">
+<section  class="section-meals">
     <ul class="meals-showcase">
         <li>
             <figure class="meal-photo">
@@ -124,7 +125,7 @@
     </ul>
 </section>
 <div class="clear-float"></div>
-<section class="section-steps">
+<section id="works" class="section-steps">
     <div class="row">
         <h2>Jak to dzia³a? &mdash; To proste!</h2>
     </div>
@@ -154,7 +155,7 @@
         </div>
     </div>
 </section>
-<section class="section-cities">
+<section id="cities" class="section-cities">
     <div class="row">
         <h2>Jeste¶my ju¿ w tych miastach!</h2>
     </div>
@@ -266,7 +267,7 @@
         </div>
     </div>
 </section>
-<section class="section-plans">
+<section id="register" class="section-plans js--section-plans">
     <div class="row">
         <h2>Zacznij je¶æ zdrowo ju¿ dzi¶!</h2>
     </div>

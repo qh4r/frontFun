@@ -17,7 +17,7 @@ $(function () {
     });
 
     var navigation = $('nav');
-    var waypoints = $('.js--section-features').waypoint({
+    $('.js--section-features').waypoint({
             handler: function (direction) {
                 console.log(this.element.id + ' hit in direction: ' + direction);
                 if (direction == 'up') {
@@ -29,4 +29,38 @@ $(function () {
             offset: '60px'
         }
     )
+
+    $('.js-way-point-1').waypoint(function(direction){
+        //if(direction === 'down'){
+        //Wazane zeby na poczaktku ukryc tak jak na koncu pliku style.css
+        // rozne dostapne na animate.css
+            $('.js-way-point-1').toggleClass('animated bounceInUp');
+        //}
+    }, {offset: '400px'})
+
+    var body = $('html, body');
+    var sections = {
+        plans : $('.js--section-plans'),
+        features: $('.js--section-features')
+    };
+    $('.scroll-to-plan').on('click', function(){
+        body.animate({scrollTop: sections.plans.offset().top}, 1000);
+    })
+    $('.scroll-to-start').on('click', function(){
+        body.animate({scrollTop: sections.features.offset().top}, 1000);
+    })
+
+
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
 });
