@@ -16,6 +16,25 @@ $(function () {
         console.log(thisH2.css('font-size'));
     });
 
+    //NAVBAR
+    var nav = $('.main-nav');
+    var navIcon = $('.mobile-nav-icon i')
+    $('.mobile-nav-icon').on('click', function(){
+        nav.slideToggle(200)
+        //ISTNIEJE ETZZ PROPERTA
+        // $().hasClass();
+        navIcon.toggleClass('ion-close-round ion-navicon-round')
+    });
+
+    $(window).on('resize',function(data){
+       if(this.innerWidth > 767){
+           nav.show();
+           navIcon.removeClass('ion-close-round');
+           navIcon.addClass('ion-navicon-round');
+       }
+    });
+
+    //WAYPOINTY
     var navigation = $('nav');
     $('.js--section-features').waypoint({
             handler: function (direction) {
@@ -36,8 +55,10 @@ $(function () {
         // rozne dostapne na animate.css
             $('.js-way-point-1').toggleClass('animated bounceInUp');
         //}
-    }, {offset: '400px'})
+    }, {offset: '400px'});
 
+
+    //SCRLLING
     var body = $('html, body');
     var sections = {
         plans : $('.js--section-plans'),
@@ -48,8 +69,7 @@ $(function () {
     })
     $('.scroll-to-start').on('click', function(){
         body.animate({scrollTop: sections.features.offset().top}, 1000);
-    })
-
+    });
 
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

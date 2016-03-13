@@ -286,6 +286,26 @@ input[type=submit]:active{
     border-bottom: 2px solid #e67e22;
 }
 
+/*MOBILE NAV*/
+
+.mobile-nav-icon {
+    float: right;
+    margin: 5px 0 0;
+    cursor: pointer;
+    display: none;
+}
+
+nav .row>a,
+nav .row>a:link,
+nav .row>a:visited,
+nav .row>a:active {
+    text-decoration: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+}
+
 /*//////////*/
 /*NAVBAR END*/
 /*///////// */
