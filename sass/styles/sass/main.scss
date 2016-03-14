@@ -1,0 +1,18 @@
+$main_background: #DD5511;
+$font_color: #FFFFFF;
+
+body {
+  background-color: $main_background;
+  color: $font_color;
+
+  td {
+    background-color: #3fa0ff;
+  }
+
+  a,
+  a:link,
+  a:active {
+    text-decoration: none;
+    color: $font_color;
+  }
+}
