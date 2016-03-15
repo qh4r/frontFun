@@ -1,5 +1,14 @@
 $main_background: #DD5511;
 $font_color: #FFFFFF;
+$sticky_class: sticky;
+$url: './resources/img.jpg';
+$bga: scroll;
+$other_class: '.test .druga-w-linii';
+$border: 1px solid #DDD;
+
+//KOMENTARZE INLINE!!
+
+//DZIEZDICZENIE
 
 body {
   background-color: $main_background;
@@ -7,6 +16,9 @@ body {
 
   td {
     background-color: #3fa0ff;
+    .inner {
+      clear: both;
+    }
   }
 
   a,
@@ -14,5 +26,117 @@ body {
   a:active {
     text-decoration: none;
     color: $font_color;
+
   }
+}
+
+.header {
+  .module .#{$sticky_class} {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  background: url($url) $bga;
+  border: $border;
+  #{$other_class} {
+   float: right;
+  }
+
+  //& daje selektor ktory wymaga obu klas
+  &.main {
+    background-color: #6894ff;
+  }
+}
+
+//ROZSZERZENIA
+
+.zawrzyj {
+  font-size: 200%;
+  text-align: center;
+}
+
+%placeholder {
+  color: green;
+  line-height: 2em;
+}
+
+.zawierajaca {
+  @extend .zawrzyj;
+  @extend %placeholder;
+  color: red;
+}
+
+.inna {
+  @extend %placeholder;
+  font-size: 40px;
+}
+
+//MIXINY
+
+@mixin test_mix($font, $bg) {
+  color: blue;
+  margin: 10px auto;
+  background-color: $bg;
+  font-size: $font;
+  a {
+    text-decoration: none;
+    color: red;
+    font-size: $font * 2;
+  }
+}
+
+.przywolanie {
+  @include test_mix(20px, #dddddd);
+}
+
+// ... umożliwia przyjęcie wielu argumentów w to miejsce
+@mixin transitions($animated...) {
+  -webkit-transition: $animated;
+  -moz-transition: $animated;
+  -ms-transition: $animated;
+  -o-transition: $animated;
+  transition: $animated;
+}
+
+.button-nice {
+  @include transitions(color 0.3s, opacity 0.5s);
+}
+
+//MOZNA DEKLAROWAC MIXIN KTORY ZAASYMILUJE ZAWARTOsC
+@mixin keyframes($frames){
+  @-webkit-keyframes #{$frames} {
+    @content
+  }
+
+  @-moz-keyframes #{$frames} {
+    @content
+  }
+
+  @-o-keyframes #{$frames} {
+    @content
+  }
+
+  @keyframes #{$frames} {
+    @content
+  }
+}
+
+//MIXIN NIE MUSI BYC ZAWARTY W KLASIE
+  @include keyframes(myAnimationName){
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+@mixin test2 ($pd) {
+  padding: $pd*1.5 $pd;
+}
+
+.zpadowane {
+  @include test2(10px);
+  margin: 10px 10px;
+}
+
+.pokolorowane {
+  @include test2(13px);
+  color: turquoise;
 }

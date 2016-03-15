@@ -1,1 +1,71 @@
-body{background-color:#d51;color:#fff}body td{background-color:#3fa0ff}body a,body a:link,body a:active{text-decoration:none;color:#fff}
+body {
+  background-color: #DD5511;
+  color: #FFFFFF; }
+  body td {
+    background-color: #3fa0ff; }
+    body td .inner {
+      clear: both; }
+  body a,
+  body a:link,
+  body a:active {
+    text-decoration: none;
+    color: #FFFFFF; }
+
+.header {
+  background: url("./resources/img.jpg") scroll;
+  border: 1px solid #DDD; }
+  .header .module .sticky {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .header .test .druga-w-linii {
+    float: right; }
+  .header.main {
+    background-color: #6894ff; }
+
+.zawrzyj, .zawierajaca {
+  font-size: 200%;
+  text-align: center; }
+
+.zawierajaca, .inna {
+  color: green;
+  line-height: 2em; }
+
+.zawierajaca {
+  color: red; }
+
+.inna {
+  font-size: 40px; }
+
+.przywolanie {
+  color: blue;
+  margin: 10px auto;
+  background-color: #dddddd;
+  font-size: 20px; }
+  .przywolanie a {
+    text-decoration: none;
+    color: red;
+    font-size: 40px; }
+
+.button-nice {
+  transition: color 0.3s, opacity 0.5s; }
+
+@-webkit-keyframes myAnimationName {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes myAnimationName {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.zpadowane {
+  padding: 15px 10px;
+  margin: 10px 10px; }
+
+.pokolorowane {
+  padding: 19.5px 13px;
+  color: turquoise; }

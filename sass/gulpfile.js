@@ -23,8 +23,8 @@ gulp.task('reload', function () {
 gulp.task('sass', function () {
     var processors = [
         autoprefixer({browsers: ['last 3 version']}),
-        mqpacker,
-        csswring
+        //mqpacker,
+        //csswring
     ];
     return gulp.src('./styles/sass/*.scss')
         .pipe(sass()).on('error', sass.logError)
