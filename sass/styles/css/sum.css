@@ -1,0 +1,53 @@
+.btn-error, .btn-error :link,
+.btn-error :active,
+.btn-error :visited, .btn-normal, .btn-normal :link,
+.btn-normal :active,
+.btn-normal :visited, .btn-ok, .btn-ok :link,
+.btn-ok :active,
+.btn-ok :visited, .outside-button, .outside-button :link,
+.outside-button :active,
+.outside-button :visited {
+  display: inline-block;
+  width: 100%;
+  border-radius: 4px;
+  color: #FFF; }
+
+.btn-error {
+  border: 1px solid #ff5644;
+  background-color: #ff5644; }
+  .btn-error :link,
+  .btn-error :active,
+  .btn-error :visited {
+    border: 1px solid #ff5644;
+    background-color: #ff5644; }
+
+.btn-normal {
+  border: 1px solid #96f0ff;
+  background-color: #96f0ff; }
+  .btn-normal :link,
+  .btn-normal :active,
+  .btn-normal :visited {
+    border: 1px solid #96f0ff;
+    background-color: #96f0ff; }
+
+.btn-ok {
+  border: 1px solid #63ff75;
+  background-color: #63ff75; }
+  .btn-ok :link,
+  .btn-ok :active,
+  .btn-ok :visited {
+    border: 1px solid #63ff75;
+    background-color: #63ff75; }
+
+button:disabled {
+  background-color: #71706f;
+  color: #EEE; }
+
+.outside-button {
+  border: 1px solid #ffc138;
+  background-color: #ffc138; }
+  .outside-button :link,
+  .outside-button :active,
+  .outside-button :visited {
+    border: 1px solid #ffc138;
+    background-color: #ffc138; }

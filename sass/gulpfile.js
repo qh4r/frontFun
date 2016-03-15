@@ -10,7 +10,7 @@ var sass = require('gulp-sass');
 gulp.task('default', function () {
     livereload.listen();
     gulp.watch('./*.html', ['reload']);
-    gulp.watch('./styles/sass/*.scss', ['sass']);
+    gulp.watch('./styles/sass/**/*.scss', ['sass']);
     gulp.watch('./styles/css/*.css', ['reload']);
     gulp.watch('./js/*.js', ['reload']);
 })

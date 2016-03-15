@@ -1,0 +1,38 @@
+@import "colors";
+
+%button-part {
+  display: inline-block;
+  width: 100%;
+  border-radius: 4px;
+  color: $font-normal;
+}
+
+@mixin btn-base($color) {
+  @extend %button-part;
+  border: 1px solid $color;
+  background-color: $color;
+  :link,
+  :active,
+  :visited{
+    @extend %button-part;
+    border: 1px solid $color;
+    background-color: $color;
+  }
+}
+
+.btn-error {
+  @include btn-base($color-error)
+}
+
+.btn-normal {
+  @include btn-base($color-neutral)
+}
+
+.btn-ok {
+  @include btn-base($color-ok)
+}
+
+button:disabled {
+  background-color: $color-disabled;
+  color: $font-disabled;
+}

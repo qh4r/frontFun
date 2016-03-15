@@ -1,0 +1,11 @@
+@import "imports/buttons";
+@import "imports/colors";
+
+//button:disabled{
+//  color: $font-disabled;
+//  background-color: $color-disabled;
+//}
+
+.outside-button {
+  @include btn-base($color-warning);
+}
