@@ -41,11 +41,23 @@ body {
   color: blue;
   margin: 10px auto;
   background-color: #dddddd;
-  font-size: 20px; }
+  font-weight: 400;
+  font-size: 18px; }
   .przywolanie a {
     text-decoration: none;
     color: red;
-    font-size: 40px; }
+    font-size: 36px; }
+
+.drugie_przywolanie {
+  color: blue;
+  margin: 10px auto;
+  background-color: #AA4444;
+  font-weight: 300;
+  font-size: 30px; }
+  .drugie_przywolanie a {
+    text-decoration: none;
+    color: red;
+    font-size: 60px; }
 
 .button-nice {
   transition: color 0.3s, opacity 0.5s; }
@@ -69,3 +81,30 @@ body {
 .pokolorowane {
   padding: 19.5px 13px;
   color: turquoise; }
+
+h1 {
+  font-size: 55px;
+  margin-bottom: 20px; }
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 10px; }
+
+h3 {
+  font-size: 45px;
+  margin-bottom: 6.66667px; }
+
+h4 {
+  font-size: 40px;
+  margin-bottom: 5px; }
+
+h5 {
+  font-size: 30px;
+  margin-bottom: 4px; }
+
+h6 {
+  font-size: 20px;
+  margin-bottom: 3.33333px; }
+
+p {
+  font-size: 120%; }

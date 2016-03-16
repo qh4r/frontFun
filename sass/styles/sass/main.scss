@@ -77,6 +77,11 @@ body {
   color: blue;
   margin: 10px auto;
   background-color: $bg;
+  @if $font > 20 {
+    font-weight: 300;
+  } @else {
+    font-weight: 400;
+  }
   font-size: $font;
   a {
     text-decoration: none;
@@ -86,7 +91,11 @@ body {
 }
 
 .przywolanie {
-  @include test_mix(20px, #dddddd);
+  @include test_mix(18px, #dddddd);
+}
+
+.drugie_przywolanie {
+  @include test_mix(30px, #AA4444);
 }
 
 // ... umożliwia przyjęcie wielu argumentów w to miejsce
@@ -139,4 +148,30 @@ body {
 .pokolorowane {
   @include test2(13px);
   color: turquoise;
+}
+
+//istnieja tez petle @while oraz @each,
+//each moze wykorzystywac mapy klucz wartosc
+
+$headers: h1, h2, h3, h4, h5, h6;
+$values: 55px, 50px, 45px, 40px, 30px, 20px;
+
+@for $i from 1 through length($headers) {
+  #{ nth($headers, $i)} {
+    font-size: nth($values, $i);
+    margin-bottom: 20px/$i;
+  }
+}
+
+//da sie tez deklarowac funkcje -- @function
+// nie deklaruje sie zwracanego typu
+// zwracana wartosc na @return
+
+
+@function double($input) {
+  @return $input*2;
+}
+
+p {
+  font-size: double(60%);
 }
