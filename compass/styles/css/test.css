@@ -6,3 +6,143 @@
   -webkit-box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
   box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
 }
+
+.png-sprite, .png-bar, .png-bill, .png-cookbook, .png-cooker-1, .png-cooker, .png-cooking, .png-cutlery, .png-daily-specials-board, .png-dinner, .png-fish, .png-grill, .png-hot-drink, .png-ice-cream, .png-meat, .png-menu, .png-open, .png-padnote, .png-pasta, .png-placeholder, .png-restaurant-app, .png-restaurant, .png-salver, .png-soup, .png-spicy-food, .png-sushi, .png-table, .png-take-away, .png-vegetarian, .png-waiter, .png-wifi-connection, .test-img {
+  background-image: url('../../images/png-s43c19fd080.png');
+  background-repeat: no-repeat;
+}
+
+.png-bar {
+  background-position: 0 0;
+}
+
+.png-bill {
+  background-position: 0 -512px;
+}
+
+.png-cookbook {
+  background-position: 0 -1024px;
+}
+
+.png-cooker-1 {
+  background-position: 0 -1536px;
+}
+
+.png-cooker {
+  background-position: 0 -2048px;
+}
+
+.png-cooking {
+  background-position: 0 -2560px;
+}
+
+.png-cutlery {
+  background-position: 0 -3072px;
+}
+
+.png-daily-specials-board {
+  background-position: 0 -3584px;
+}
+
+.png-dinner {
+  background-position: 0 -4096px;
+}
+
+.png-fish {
+  background-position: 0 -4608px;
+}
+
+.png-grill {
+  background-position: 0 -5120px;
+}
+
+.png-hot-drink {
+  background-position: 0 -5632px;
+}
+
+.png-ice-cream {
+  background-position: 0 -6144px;
+}
+
+.png-meat {
+  background-position: 0 -6656px;
+}
+
+.png-menu {
+  background-position: 0 -7168px;
+}
+
+.png-open {
+  background-position: 0 -7680px;
+}
+
+.png-padnote {
+  background-position: 0 -8192px;
+}
+
+.png-pasta {
+  background-position: 0 -8704px;
+}
+
+.png-placeholder {
+  background-position: 0 -9216px;
+}
+
+.png-restaurant-app {
+  background-position: 0 -9728px;
+}
+
+.png-restaurant {
+  background-position: 0 -10240px;
+}
+
+.png-salver {
+  background-position: 0 -10752px;
+}
+
+.png-soup {
+  background-position: 0 -11264px;
+}
+
+.png-spicy-food {
+  background-position: 0 -11776px;
+}
+
+.png-sushi {
+  background-position: 0 -12288px;
+}
+
+.png-table {
+  background-position: 0 -12800px;
+}
+
+.png-take-away {
+  background-position: 0 -13312px;
+}
+
+.png-vegetarian {
+  background-position: 0 -13824px;
+}
+
+.png-waiter {
+  background-position: 0 -14336px;
+}
+
+.png-wifi-connection {
+  background-position: 0 -14848px;
+}
+
+.sprites {
+  list-style: none;
+}
+.sprites li {
+  display: block;
+  content: "";
+  height: 512px;
+  width: 512px;
+}
+
+.test-img {
+  background-position: 0 -6144px;
+  color: #2ca2af;
+}

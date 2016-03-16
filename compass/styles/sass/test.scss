@@ -4,3 +4,29 @@
   @include border-radius(10px);
   @include box-shadow(0 0 3px 3px #444, inset 5px 5px 6px #555);
 }
+
+@import "compass/utilities/sprites";
+
+@import "png/*.png";
+
+//png bo taka nazwa folderu reszta to forma
+@include all-png-sprites;
+
+
+$height: png-sprite-height(cookbook);
+$width: png-sprite-width(cookbook);
+
+.sprites  {
+  list-style: none;
+  li {
+    display: block;
+    content: "";
+    height: $height;
+    width: $width;
+  }
+}
+
+.test-img {
+  @include png-sprite(ice-cream);
+  color: #2ca2af;
+}

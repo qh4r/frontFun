@@ -34,3 +34,4 @@ node_modules
 .idea
 website/bower_components/
 compass/.sass-cache
+compass/images
