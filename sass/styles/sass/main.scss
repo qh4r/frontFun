@@ -175,3 +175,16 @@ $values: 55px, 50px, 45px, 40px, 30px, 20px;
 p {
   font-size: double(60%);
 }
+
+
+.a {
+  .b {
+    .c {
+      //AND ZAWRZE CALA SCIEZKE
+      a & {
+        text-decoration: none;
+        color: crimson;
+      }
+    }
+  }
+}

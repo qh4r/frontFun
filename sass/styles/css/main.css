@@ -108,3 +108,7 @@ h6 {
 
 p {
   font-size: 120%; }
+
+a .a .b .c {
+  text-decoration: none;
+  color: crimson; }
