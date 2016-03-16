@@ -33,3 +33,4 @@ node_modules
 .node_repl_history
 .idea
 website/bower_components/
+compass/.sass-cache
