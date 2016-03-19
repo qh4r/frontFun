@@ -6,3 +6,157 @@
   -webkit-box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
   box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
 }
+
+.test {
+  border-width: 2px;
+  border-style: solid;
+  border-color: blue;
+}
+.test .a {
+  text-decoration: none;
+  color: #111111;
+}
+
+.biz-sprite, .biz-audio-cassetta, .biz-bag, .biz-beer, .biz-books, .biz-box, .biz-business-card, .biz-calculator, .biz-calendar, .biz-cell, .biz-chair, .biz-coffee-biscuit, .biz-computer, .biz-document-holder, .biz-drawer, .biz-graphic, .biz-inbox, .biz-keys, .biz-lunch, .biz-mac, .biz-mail, .biz-medical-box, .biz-old-phone, .biz-organizer, .biz-pen-ink, .biz-plant, .biz-printer, .biz-search-document, .biz-sofa, .biz-target, .biz-trash, .biz-typewriter, .biz-usb-pen, .spirte-test {
+  background-image: url('../../images/biz-sd96d32fb21.png');
+  background-repeat: no-repeat;
+}
+
+.biz-audio-cassetta {
+  background-position: 0 0;
+}
+
+.biz-bag {
+  background-position: 0 -512px;
+}
+
+.biz-beer {
+  background-position: 0 -1024px;
+}
+
+.biz-books {
+  background-position: 0 -1538px;
+}
+
+.biz-box {
+  background-position: 0 -2050px;
+}
+
+.biz-business-card {
+  background-position: 0 -2562px;
+}
+
+.biz-calculator {
+  background-position: 0 -3074px;
+}
+
+.biz-calendar {
+  background-position: 0 -3587px;
+}
+
+.biz-cell {
+  background-position: 0 -4099px;
+}
+
+.biz-chair {
+  background-position: 0 -4611px;
+}
+
+.biz-coffee-biscuit {
+  background-position: 0 -5124px;
+}
+
+.biz-computer {
+  background-position: 0 -5637px;
+}
+
+.biz-document-holder {
+  background-position: 0 -6150px;
+}
+
+.biz-drawer {
+  background-position: 0 -6663px;
+}
+
+.biz-graphic {
+  background-position: 0 -7176px;
+}
+
+.biz-inbox {
+  background-position: 0 -7689px;
+}
+
+.biz-keys {
+  background-position: 0 -8202px;
+}
+
+.biz-lunch {
+  background-position: 0 -8715px;
+}
+
+.biz-mac {
+  background-position: 0 -9228px;
+}
+
+.biz-mail {
+  background-position: 0 -9740px;
+}
+
+.biz-medical-box {
+  background-position: 0 -10253px;
+}
+
+.biz-old-phone {
+  background-position: 0 -10764px;
+}
+
+.biz-organizer {
+  background-position: 0 -11276px;
+}
+
+.biz-pen-ink {
+  background-position: 0 -11789px;
+}
+
+.biz-plant {
+  background-position: 0 -12302px;
+}
+
+.biz-printer {
+  background-position: 0 -12815px;
+}
+
+.biz-search-document {
+  background-position: 0 -13327px;
+}
+
+.biz-sofa {
+  background-position: 0 -13839px;
+}
+
+.biz-target {
+  background-position: 0 -14351px;
+}
+
+.biz-trash {
+  background-position: 0 -14864px;
+}
+
+.biz-typewriter {
+  background-position: 0 -15377px;
+}
+
+.biz-usb-pen {
+  background-position: 0 -15889px;
+}
+
+.no-list li {
+  display: block;
+  margin: 2% auto;
+  width: 512px;
+  height: 514px;
+}
+
+.spirte-test {
+  background-position: 0 -1024px;
+}
