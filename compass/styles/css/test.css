@@ -140,9 +140,20 @@
   content: "";
   height: 512px;
   width: 512px;
+  margin: 10px auto;
 }
 
 .test-img {
   background-position: 0 -6144px;
   color: #2ca2af;
+}
+
+.test {
+  border-width: 2px;
+  border-style: solid;
+  border-color: blue;
+}
+.test .a {
+  text-decoration: none;
+  color: #111111;
 }

@@ -23,6 +23,7 @@ $width: png-sprite-width(cookbook);
     content: "";
     height: $height;
     width: $width;
+    margin: 10px auto;
   }
 }
 
@@ -30,3 +31,39 @@ $width: png-sprite-width(cookbook);
   @include png-sprite(ice-cream);
   color: #2ca2af;
 }
+
+.test {
+  border: {
+    width: 2px;
+    style: solid;
+    color: blue;
+  };
+
+  .a {
+    text-decoration: none;
+    color: #111111;
+  }
+}
+
+//@import "compass/utilities/sprites";
+//
+//@import "biz/*.png";
+//
+//@include all-biz-sprites;
+//
+//$height: biz-sprite-height(beer);
+//$width: biz-sprite-width(beer);
+//
+//.no-list {
+//  //list-style: none;
+//  li {
+//    display: block;
+//    margin: 2% auto;
+//    width: $width;
+//    height: $height;
+//  }
+//}
+//
+//.spirte-test {
+//  @include biz-sprite(beer);
+//}
