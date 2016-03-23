@@ -3099,6 +3099,87 @@ blockquote cite:before {
   content: "\f196";
 }
 
+.l-header {
+  padding: 1.5rem 0;
+}
+.l-header .logo {
+  margin: 0;
+  font-size: 1.625rem;
+  line-height: 3rem;
+}
+.l-header .logo a {
+  text-decoration: none;
+}
+
+.l-list-divided {
+  list-style-type: none;
+  margin: 0;
+}
+.l-list-divided li {
+  float: left;
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+
+#contact-info p {
+  margin: 0;
+}
+#contact-info small {
+  text-transform: uppercase;
+}
+#contact-info:last-child {
+  font-weight: bold;
+}
+
+#main-banner {
+  padding: 3rem 0 0;
+}
+
+.l-list-unstyled, .l-list-inline {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.l-image-well {
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+  float: left;
+}
+
+.l-callout {
+  padding: 3px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.l-list-inline li {
+  display: inline;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  height: 3rem;
+  padding: 0 1rem;
+  outline: none;
+  border: 1px solid;
+  font-size: 1.125rem;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
 hr {
   display: block;
   height: 1px;
