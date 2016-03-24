@@ -8,3 +8,12 @@ define(function(require){
         console.log('asd')
     })
 });
+
+//EQUIVALENT
+//define(['require', './workerTest', './calcTest', './jqueryTest'], function(require, worker){
+//    console.log('module loaded');
+//    //JQUUERY LOADS GLOBALLY ANYWAY (REQUIRED IN jqueryTest)
+//    $(function(){
+//        console.log('asd')
+//    })
+//});
