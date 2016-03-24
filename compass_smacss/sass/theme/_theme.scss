@@ -1,0 +1,117 @@
+body {
+  color: $color-text;
+  font: #{$base-font-size}/#{$baseline} $font-1;
+}
+
+a {
+  color: $color-link;
+  &:hover {
+  color: $color-link-hover;
+}
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: 1.3125rem;
+  color: $color-dark-text;
+  font-family: $font-2;
+}
+
+h1 {
+  font-size: 3.375rem;
+  font-weigth: bold;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $color-light-text;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: $font-1;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: $font-1;
+  font-size: 0.444rem;
+}
+
+blockquote cite {
+  color: $color-light-text;
+}
+
+.t-margin {
+  margin-bottom: $general-margin;
+}
+
+.t-cross {
+  border-bottom: 4px solid #F4F4F4;
+  @include box-shadow(0 2px 5px rgba(0, 0, 0, .4));
+}
+
+.logo a {
+  color: $color-text;
+  font-family: $font-1;
+}
+
+
+.t-main-banner {
+  background-color: $color-banner;
+
+  h1,h3,p {
+    color: #fff;
+
+    @include text-shadow(1px 1px 3px rgba(0, 0, 0, .3));
+  }
+
+  hr {
+    width: 75%;
+    background-color: rgba(255, 255, 255, .4);
+  }
+}
+
+
+
+.btn {
+  background-color:  $color-1;
+  color: $color-text;
+  border-color: darken($color-1, 20%);
+  @include box-shadow(0 -1px 0 0 darken($color-1, 20%) inset);
+  &:hover {
+    background-color: darken($color-1, 5%);
+  }
+}
+
+.btn-primary {
+  background-color: $color-link;
+
+  color: #fff;
+  border-color: darken($color-link, 20%);
+
+  @include box-shadow(0 -1px 0 0 darken($color-1, 20%) inset);
+
+  &:hover {
+    background-color: darken($color-link, 10%);
+  }
+}
+
+.l-image-well {
+  background-color: $color-hr;
+
+  @include border-radius(3px);
+
+  img {
+    margin-top: .75rem;
+  }
+}
