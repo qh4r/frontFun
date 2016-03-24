@@ -1,4 +1,4 @@
-define(function (require) {
+define(function () {
     console.log('worker');
     var Worker = function (name, tool) {
         console.log(name + ': I don\'t care bout no calculations order');
