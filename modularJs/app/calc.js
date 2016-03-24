@@ -11,7 +11,7 @@ console.log('calc');
         this.Minus = function(number){
             count -= !isNaN(number) ? Number(number) : 0;
         };
-        this.Devide = function (number) {
+        this.Divide = function (number) {
             count /= !isNaN(number) ? Number(number) : 1;
         };
         this.Equals = function(){
@@ -26,14 +26,13 @@ console.log('calc');
                 count = 0;
             })(count)
         };
-        this.Whitdraw = function(){
+        this.Withdraw = function(){
             return (function(mem){
                 memory = 0;
                 return mem;
             })(memory);
         }
     }
-
     return Calculator;
 
 });
