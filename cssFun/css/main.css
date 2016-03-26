@@ -81,3 +81,25 @@ p {
   font-style: normal;
   color: #0072ae;
   font-weight: bold; }
+
+.wrapper {
+  background-color: #63ff75;
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%; }
+  .wrapper > section {
+    float: left;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 2%;
+    width: 30%; }
+    .wrapper > section:first-child {
+      margin-left: 1%; }
+    .wrapper > section:last-child {
+      margin-right: 1%; }
+
+.content-block .figure {
+  float: left; }
+
+.content-block p:last-of-type {
+  clear: both; }

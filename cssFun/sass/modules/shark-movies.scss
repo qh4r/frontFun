@@ -1,0 +1,11 @@
+//FLOAT SPRAWIA ZE OPLYWAJA GO ELEMENTY WYSTEPUJACE PO
+//powtarzam PO nim
+.content-block {
+  .figure {
+    float: left;
+  }
+  //CLEAR czysci od tego elementu ktorego dotyczy
+  p:last-of-type {
+    clear: both;
+  }
+}
