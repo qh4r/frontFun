@@ -1,8 +1,9 @@
-//
-//BUTTONS
-//
+/*-------------
+BUTTONS
+-------------*/
 .button {
   border: 2px solid $normal-button-color;
+  border-radius: 4px;
   color: $normal-button-color;
   padding: 10px 0;
   font: {
@@ -13,8 +14,24 @@
     decoration: none;
     align: center;
   }
+  transition: {
+    property: all, background-color;
+    duration: 0.3s, 1s;
+    delay: .5s, 0s;
+    timing-function: linear;
+  };
   display: block;
+  transform: scale(.9, .9);
   letter-spacing: 1.5px;
+  &:hover, &:focus   {
+    color: $white-button-color;
+    background-color: $normal-button-color;
+    border-color: $white-button-color;
+  }
+}
+
+.wrapper .button:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .button-narrow {

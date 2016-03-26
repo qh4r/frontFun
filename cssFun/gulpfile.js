@@ -22,12 +22,12 @@ gulp.task('reload', function () {
 
 gulp.task('sass', function () {
     var processors = [
-        //autoprefixer({browsers: ['last 3 version']}),
+        autoprefixer({browsers: ['last 10 version']}),
         //mqpacker,
         //csswring
     ];
     return gulp.src('./sass/*.scss')
         .pipe(sass()).on('error', sass.logError)
-        //.pipe(postcss(processors))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./css/'));
 });

@@ -1,7 +1,8 @@
 @import "settings/colors.scss";
 @import "settings/fonts";
-@import "modules/_reset";
+@import "modules/reset";
 @import "modules/base";
-@import "modules/_basics";
-@import "modules/_shark-movies";
 @import "modules/buttons";
+@import "modules/basics";
+@import "modules/index";
+@import "modules/shark-movies";

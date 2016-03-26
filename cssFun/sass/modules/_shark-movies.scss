@@ -1,3 +1,6 @@
+/*SHARKS
+___________________*/
+
 //FLOAT SPRAWIA ZE OPLYWAJA GO ELEMENTY WYSTEPUJACE PO
 //powtarzam PO nim
 .content-block {
@@ -7,5 +10,60 @@
   //CLEAR czysci od tego elementu ktorego dotyczy
   p:last-of-type {
     clear: both;
+  }
+}
+
+#jaws div {
+  background: {
+    color: $blue-background;
+  }
+  h1 {
+    color: $white-button-color;
+  }
+  color: $white-button-color;
+  .button-narrow {
+    color: $white-button-color;
+    border: {
+      color: $white-button-color;
+      radius: 4px;
+    }
+    background: {
+      color: $normal-button-color;
+    }
+    transition: color 0.2s,
+    border-color 0.2s,
+    background-color 2s,
+    transform 1s 0.3s;
+    &:hover {
+      color: $normal-button-color;
+      border-color: $normal-button-color;
+      background-color: $white-button-color;
+    }
+    &:active {
+      //transform: translate(-200%, 0);
+      transform: rotate(180deg) translate(10px);
+    }
+  }
+}
+
+.figure {
+  overflow: hidden;
+  border: {
+    color: #cc484c;
+    width: 5px;
+    style: solid;
+  };
+  img {
+    //FLOAT POPRAWIA BORDER
+    //ZAMIAST TEGO MOZNA UZYC NA START SCALE(1.1, 1.1)
+    float: left;
+    transition: {
+      property: all;
+      duration: 0.3s;
+    }
+    transform: scale(1.0, 1.0);
+    &:hover {
+      transform: scale(1.3, 1.3) rotate(15deg);
+    }
   }
 }
