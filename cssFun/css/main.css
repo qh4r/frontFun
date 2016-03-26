@@ -90,6 +90,9 @@ img, iframe, video, object {
 strong, b {
   font-weight: bold; }
 
+body {
+  background-color: #DDD; }
+
 .grouping:before, .grouping:after {
   content: "";
   display: table; }
@@ -211,6 +214,48 @@ INTRO (INDEX)
   transition: all 0.3s; }
   .button-action:hover {
     border-color: #ff3c74; }
+
+/*
+------------
+----NAV-----
+------------
+*/
+nav {
+  background-color: white; }
+
+.primary-nav {
+  float: right;
+  list-style: none; }
+  .primary-nav a {
+    text-decoration: none; }
+  .primary-nav > li {
+    float: left; }
+    .primary-nav > li:first-child a {
+      border-left: none; }
+    .primary-nav > li:nth-child(even) {
+      background-color: #a0ff9c; }
+    .primary-nav > li:nth-child(odd) {
+      background-color: #fffb99; }
+    .primary-nav > li:nth-child(4) a {
+      color: #000;
+      font-weight: 700; }
+    .primary-nav > li > a {
+      float: left;
+      padding: 25px 0;
+      width: 150px;
+      border-left: 1px solid #cc484c; }
+      .primary-nav > li > a:hover {
+        background-color: #cc484c;
+        color: white; }
+
+nav li a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  color: #766e65; }
 
 /*SHARKS
 ___________________*/

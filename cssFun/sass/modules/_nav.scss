@@ -1,0 +1,63 @@
+/*
+------------
+----NAV-----
+------------
+*/
+nav {
+  background-color: white;
+}
+.primary-nav {
+  float: right;
+  a {
+    text-decoration: none;
+  }
+
+  list-style: none;
+  >li {
+    float:left;
+    //display: block;
+    &:first-child a{
+      border-left: none;
+    }
+    &:nth-child(even) {
+      background-color: #a0ff9c;
+    }
+    &:nth-child(odd) {
+      background-color: #fffb99;
+    }
+    //JEST TEŻ nth-of-type()
+    // 1 indexed (od 1 do n)
+    &:nth-child(4) a{
+      color: #000;
+      font-weight: 700;
+    }
+    > a {
+      float: left;
+      padding: 25px 0;
+      width: 150px;
+      border-left: 1px solid #cc484c;
+      &:hover {
+        background-color: #cc484c;
+        color: white;
+      }
+    }
+  }
+}
+
+nav {
+  li {
+    a {
+      font: {
+        family: $arial;
+        size: 15px;
+      }
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      transition: background-color 0.2s;
+      color: #766e65;
+    }
+  }
+}
+
