@@ -18,7 +18,7 @@ h2 {
 }
 
 p {
-  font: normal normal 18px/1.6 Georgia, 'Times New Roman', serif;
+  font: normal normal 18px/1.6 $georgia;
 }
 
 .column-title {
@@ -40,7 +40,7 @@ p {
   //powoduje odkrycie elementów
   //overflow: hidden;
   //position: relative;
-  > section {
+  > div {
     float: left;
     box-sizing: border-box;
     padding: 0;
@@ -51,6 +51,9 @@ p {
     }
     &:last-child {
       margin-right: 1%;
+    }
+    a:last-child {
+      margin-top: 10px
     }
   }
 }

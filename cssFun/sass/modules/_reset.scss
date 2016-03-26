@@ -48,15 +48,6 @@ table {
   border-spacing: 0;
 }
 
-.grouping:before {
-  content:"";
-  display:table;
-}
-.grouping:after {
-  @extend .grouping:before;
-  clear: both;
-}
-
 img,iframe,video,object {
   max-width: 100%;
 }

@@ -1,0 +1,24 @@
+//
+//BUTTONS
+//
+.button {
+  border: 2px solid $normal-button-color;
+  color: $normal-button-color;
+  padding: 10px 0;
+  font: {
+    family: $arial;
+    weight: bold;
+  }
+  text: {
+    decoration: none;
+    align: center;
+  }
+  display: block;
+  letter-spacing: 1.5px;
+}
+
+.button-narrow {
+  width: 25%;
+  margin: 1% 2%;
+  @extend .float-right;
+}
