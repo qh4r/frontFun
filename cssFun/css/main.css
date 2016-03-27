@@ -293,6 +293,13 @@ nav {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.mobile-menu-icon {
+  font-size: 3em;
+  float: right;
+  margin: 10px 20px 0 0;
+  display: none;
+  cursor: pointer; }
+
 .primary-nav {
   float: right;
   list-style: none; }
@@ -390,6 +397,46 @@ nav li a {
 @media screen and (max-width: 1023px) {
   nav figure {
     display: none; } }
+
+/*
+------------------------------
+ MENU MOBILNE
+------------------------------*/
+@media screen and (max-width: 900px) {
+  .mobile-menu-icon {
+    display: block; }
+  nav {
+    position: static; }
+    nav .primary-nav {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s; }
+      nav .primary-nav.nav-active {
+        height: 340px; }
+      nav .primary-nav li {
+        float: right;
+        width: 100%; }
+        nav .primary-nav li a {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          text-align: right;
+          padding: 15px 25px 15px 0;
+          width: 100%;
+          border-left: none;
+          border-bottom: 1px solid #880000;
+          font-size: 13px; }
+    nav .has-sub-menu:hover ul {
+      -webkit-animation: none;
+              animation: none; }
+    nav .has-sub-menu ul {
+      position: static;
+      display: block;
+      border: none;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      width: 100%; } }
 
 /*SHARKS
 ___________________*/
