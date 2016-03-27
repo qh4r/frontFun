@@ -234,6 +234,36 @@ nav {
     position: absolute;
     top: -40px;
     left: 50px; }
+    nav figure img:active {
+      -webkit-animation-name: sharkyRoll;
+              animation-name: sharkyRoll;
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
+
+@-webkit-keyframes sharkyRoll {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  20% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg); }
+  40% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg); }
+  60% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  80% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  90% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 .primary-nav {
   float: right;
@@ -265,6 +295,7 @@ nav {
   -webkit-transition: all 0.4s;
   transition: all 0.4s; }
   .has-sub-menu ul {
+    z-index: 1;
     position: absolute;
     top: 70px;
     width: 150px;
@@ -276,7 +307,26 @@ nav {
     display: none;
     background-color: white; }
   .has-sub-menu:hover ul {
-    display: block; }
+    display: block;
+    -webkit-animation-name: slideDown;
+            animation-name: slideDown;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease; }
+
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0; }
+  95% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%); }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1; } }
   .has-sub-menu li a {
     display: block;
     padding: 25px 0; }
