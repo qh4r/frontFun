@@ -4,6 +4,9 @@
 ------------
 */
 nav {
+  //NEGATYWNE X POWODUJE ZE ZACZYNA Z GORY
+  //BOX SHADOW:: X Y BLUR COLOR
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   background-color: white;
   //FIXED DZIALA JAK RELATIVE ALE ELEMENT
   //NIE ZACHOWUJE SIE JAK BLOCK
@@ -24,19 +27,18 @@ nav {
     top: -40px;
     left: 50px;
     img {
-      &:active {
+      &:hover {
         animation: {
           name: sharkyRoll;
-          duration: 2s;
+          duration: 1.5s;
           timing-function: linear;
-
         };
       }
     }
   }
 }
 
-@-webkit-keyframes sharkyRoll {
+@keyframes sharkyRoll {
   0% {transform: rotate(0deg)}
   20% {transform: rotate(30deg)}
   40%{ transform: rotate(-30deg)}
@@ -72,6 +74,7 @@ nav {
       font-weight: 700;
     }
     > a {
+      position: relative;
       z-index: 100;
       float: left;
       padding: 25px 0;
@@ -88,7 +91,9 @@ nav {
 .has-sub-menu {
   transition: all 0.4s;
   ul {
-    z-index: 1;
+    //Z INDEX TYLKO DO ABSOLUTE RELATIVE FIXES
+    // I OPCJONALNIE OPACITY <1
+    z-index: 10;
     position: absolute;
     top: 70px;
     width: 150px;
@@ -101,6 +106,18 @@ nav {
     display: none;
 
     background-color: white;
+    li {
+      a {
+        position: relative;
+        z-index: 5;
+        display: block;
+        padding: 25px 0;
+        &:hover {
+          background-color: #cc484c;
+          color: white;
+        }
+      }
+    }
   }
 
   //GENIALNE MOZNA MIESZAC W TAKI SPOSOB
@@ -116,7 +133,7 @@ nav {
     }
   }
 
-  @-webkit-keyframes slideDown {
+  @keyframes slideDown {
     //MOZE BYC FROM i TO (start i koniec)
     0% {transform: translateY(-100%);
         opacity: 0}
@@ -126,16 +143,7 @@ nav {
         }
   }
 
-  li {
-    a {
-      display: block;
-      padding: 25px 0;
-      &:hover {
-        background-color: #cc484c;
-        color: white;
-      }
-    }
-  }
+
 }
 
 nav {
