@@ -5,7 +5,27 @@
 */
 nav {
   background-color: white;
+  //FIXED DZIALA JAK RELATIVE ALE ELEMENT
+  //NIE ZACHOWUJE SIE JAK BLOCK
+  //MOZNA ROZCIAGAC JAK PONIZEJ
+  position: fixed;
+  //FIXED LACZY RELATIVE Z USTAIENIEM WZGLEDEM VIEWPORTU
+  // (ZAWSZE, POMIJA RODZICOW RELATIVE)
+  left: 0;
+  right: 0;
+  top: 0;
+  //POSTION:
+  // ABSOLUTE I FIXED POZWALAJA NA UZYWANIE TOP LEFT ITD
+  // ABSOLUTE WZGLEDEM KONTENERA (BODY LUB PIERWSZEGO
+  // NAPOTKANEGO RODZICA Z POSITION: RELATIVE
+  // FIXED WZGLEDEM OKNA (SCROLLUJE SIE NA GORZE)
+  figure {
+    position: absolute;
+    top: -40px;
+    left: 50px;
+  }
 }
+
 .primary-nav {
   float: right;
   a {
@@ -13,29 +33,68 @@ nav {
   }
 
   list-style: none;
-  >li {
-    float:left;
+  > li {
+    float: left;
     //display: block;
-    &:first-child a{
+    &:first-child a {
       border-left: none;
     }
-    &:nth-child(even) {
+    &:nth-child(even) a {
       background-color: #a0ff9c;
     }
-    &:nth-child(odd) {
+    &:nth-child(odd) a {
       background-color: #fffb99;
     }
     //JEST TEŻ nth-of-type()
     // 1 indexed (od 1 do n)
-    &:nth-child(4) a{
+    &:nth-child(4) a {
       color: #000;
       font-weight: 700;
     }
     > a {
+      z-index: 100;
       float: left;
       padding: 25px 0;
       width: 150px;
       border-left: 1px solid #cc484c;
+      &:hover {
+        background-color: #cc484c;
+        color: white;
+      }
+    }
+  }
+}
+
+.has-sub-menu {
+  transition: all 0.4s;
+
+  ul {
+    position: absolute;
+    top: 70px;
+    width: 150px;
+    border: 2px solid #DDD;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    //BY DOLNY ELEMENT NIE PSUL ZAOKRAGLOWNYCH ROGOW
+    //PODCZAS HOVERA : OVERFLOW HIDDEN
+    overflow: hidden;
+    display: none;
+
+    background-color: white;
+  }
+
+  //GENIALNE MOZNA MIESZAC W TAKI SPOSOB
+  //TO POKAZUJE SUBMENU
+  //SELEKTOR:
+  //.has-sub-menu:hover ul
+  &:hover ul {
+    display: block;
+  }
+
+  li {
+    a {
+      display: block;
+      padding: 25px 0;
       &:hover {
         background-color: #cc484c;
         color: white;

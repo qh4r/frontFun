@@ -18,15 +18,21 @@
 <nav class="grouping">
     <!--figure>img[src=images/sharky.png alt=sharky]+ul.primary-nav>li*4>a-->
     <figure><img src="images/sharky.png" alt="sharky">
-        <ul class="primary-nav">
-            <li><a href="#">Start</a></li>
-            <li><a href="#">Filmy</a></li>
-            <li><a href="#">Gatunki</a></li>
-            <li><a href="#">Inne</a></li>
-        </ul>
     </figure>
+    <ul class="primary-nav">
+            <li><a href="#">Start</a></li>
+            <li class="has-sub-menu"><a href="#">Filmy</a>
+                <ul>
+                    <li><a href="#">Szczeki</a></li>
+                    <li><a href="#">Szrknado</a></li>
+                    <li><a href="#">Głęboka woda</a></li>
+                </ul>
+            </li>
+            <li class="has-sub-menu"><a href="#">Gatunki</a></li>
+            <li class="has-sub-menu"><a href="#">Inne</a></li>
+        </ul>
 </nav>
-<section class="grouping">
+<section class="grouping intro">
     <div class="intro-wrap">
         <h1>Rekinarium</h1>
         <h2>O rekinach i innym morskim zwierzyńcu</h2>

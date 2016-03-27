@@ -193,15 +193,19 @@ p {
 INTRO (INDEX)
 -------------
 */
+.intro {
+  margin-top: 200px; }
+
 .intro-wrap {
-  width: 360px;
+  max-width: 660px;
+  width: 100%;
   margin-right: 60px;
   float: left; }
 
 .premium-wrap {
   width: 300px;
-  float: left;
-  margin-top: 120px; }
+  float: right;
+  margin: 120px 60px 0 0; }
 
 .button-action {
   margin: 0;
@@ -221,7 +225,15 @@ INTRO (INDEX)
 ------------
 */
 nav {
-  background-color: white; }
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; }
+  nav figure {
+    position: absolute;
+    top: -40px;
+    left: 50px; }
 
 .primary-nav {
   float: right;
@@ -232,14 +244,15 @@ nav {
     float: left; }
     .primary-nav > li:first-child a {
       border-left: none; }
-    .primary-nav > li:nth-child(even) {
+    .primary-nav > li:nth-child(even) a {
       background-color: #a0ff9c; }
-    .primary-nav > li:nth-child(odd) {
+    .primary-nav > li:nth-child(odd) a {
       background-color: #fffb99; }
     .primary-nav > li:nth-child(4) a {
       color: #000;
       font-weight: 700; }
     .primary-nav > li > a {
+      z-index: 100;
       float: left;
       padding: 25px 0;
       width: 150px;
@@ -247,6 +260,29 @@ nav {
       .primary-nav > li > a:hover {
         background-color: #cc484c;
         color: white; }
+
+.has-sub-menu {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s; }
+  .has-sub-menu ul {
+    position: absolute;
+    top: 70px;
+    width: 150px;
+    border: 2px solid #DDD;
+    border-top: 0;
+    -webkit-border-radius: 0 0 10px 10px;
+            border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    display: none;
+    background-color: white; }
+  .has-sub-menu:hover ul {
+    display: block; }
+  .has-sub-menu li a {
+    display: block;
+    padding: 25px 0; }
+    .has-sub-menu li a:hover {
+      background-color: #cc484c;
+      color: white; }
 
 nav li a {
   font-family: Arial, Helvetica, sans-serif;

@@ -3,17 +3,21 @@
 INTRO (INDEX)
 -------------
 */
+.intro {
+  margin-top: 200px;
+}
 
 .intro-wrap {
-  width: 360px;
+  max-width: 660px;
+  width: 100%;
   margin-right: 60px;
   float: left
 }
 
 .premium-wrap {
   width: 300px;
-  float: left;
-  margin-top: 120px
+  float: right;
+  margin: 120px 60px 0 0;
 }
 
 .button-action {
