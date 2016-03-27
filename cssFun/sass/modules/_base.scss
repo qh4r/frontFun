@@ -1,6 +1,10 @@
 body {
   background-color: #DDD;
 }
+
+* {
+  z-index: 1;
+}
 //BASE STYLES
 .grouping:before {
   content:"";

@@ -93,6 +93,9 @@ strong, b {
 body {
   background-color: #DDD; }
 
+* {
+  z-index: 1; }
+
 .grouping:before, .grouping:after {
   content: "";
   display: table; }
@@ -383,6 +386,10 @@ nav li a {
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
   color: #766e65; }
+
+@media screen and (max-width: 1023px) {
+  nav figure {
+    display: none; } }
 
 /*SHARKS
 ___________________*/
