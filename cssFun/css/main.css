@@ -36,6 +36,23 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00558e', endColorstr='#00589b',GradientType=1 );
   /* IE6-8 fallback on horizontal gradient */ }
 
+/*
+---------------
+----FONTS------
+---------------
+*/
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../fonts/LeagueGothic-Regular.otf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../fonts/LeagueGothic-Italic.otf");
+  font-weight: normal;
+  font-style: italic; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -204,6 +221,11 @@ INTRO (INDEX)
   width: 100%;
   margin-right: 60px;
   float: left; }
+  .intro-wrap p {
+    font-family: "League Gothic", sans-serif; }
+  .intro-wrap h2 {
+    font-family: "League Gothic", sans-serif;
+    font-style: italic; }
 
 .premium-wrap {
   width: 300px;

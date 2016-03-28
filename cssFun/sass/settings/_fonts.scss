@@ -1,2 +1,23 @@
+
 $arial: Arial, Helvetica, sans-serif;
 $georgia: Georgia, 'Times New Roman', serif;
+/*
+---------------
+----FONTS------
+---------------
+*/
+//URLE DO CZCIONEK MUSZĄ BYC NIESTETY
+// RELATYWNE DO PLIKU CSS (GENEROWANEGO Z SCSS)
+@font-face {
+  font-family: 'League Gothic';
+  src: url('../fonts/LeagueGothic-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url('../fonts/LeagueGothic-Italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}

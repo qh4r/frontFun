@@ -8,6 +8,14 @@ INTRO (INDEX)
 }
 
 .intro-wrap {
+  p {
+    font-family: "League Gothic", sans-serif;
+    //font-style: italic;
+  }
+  h2 {
+    font-family: "League Gothic", sans-serif;
+    font-style: italic;
+  }
   max-width: 660px;
   width: 100%;
   margin-right: 60px;
