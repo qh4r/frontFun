@@ -493,6 +493,9 @@ ___________________*/
               transform: rotate(180deg) translate(10px); }
 
 .figure {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21.875%;
   overflow: hidden;
   border-color: #cc484c;
   border-width: 5px;
