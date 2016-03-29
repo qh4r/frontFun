@@ -1,0 +1,22 @@
+* {
+  z-index: 1;
+}
+//BASE STYLES
+.grouping:before {
+  content:"";
+  display: table;
+  //DISPLAY BLOCK GENERALNIE TEZ DZIALA
+}
+.grouping:after {
+  @extend .grouping:before;
+  clear: both;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
