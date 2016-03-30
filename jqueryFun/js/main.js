@@ -32,4 +32,19 @@ define(['jquery'],function(){
         })($(list[0]).css('color'), Array.prototype.slice.call(list,0,list.length), 125);
     })($('.list1').children())
 
+    //MAJACE ATRYBUT CLASS
+    $('.list1 [class]').css('background-color', "#0000FF")
+
+    //INNY LUB BRAK
+    $('.list2 [class!=other-staff]').css('background-color', "#FF00FF")
+
+    //ATRYBUT CLASS ZACZYNAAJACY SIE OD other
+    $('.list1 [class^=other]').css('background-color', "#8888FF")
+
+    //Atrybut class konczoncy sie na shit
+    $('.list1 [class$=shit]').css('font-size', "200%")
+
+    //ATRYBUT class ZAWIERA string stuff
+    $('[class*=stuff]').css('font-weight', "700")
+
 });
