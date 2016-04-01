@@ -24,7 +24,7 @@
         <li>lista2</li>
         <li class>lista3</li>
         <li class="stuff">lista4</li>
-        <li >lista5</li>
+        <li>lista5</li>
         <li class="other-stuff">lista6</li>
         <li class="other-shit">lista7</li>
         <li>lista8</li>
@@ -54,11 +54,35 @@
 
 <div class="group2">
     <h5>qwe1</h5>
+
     <p>asda</p>
     <h5>qwe2</h5>
     <h5>qwe3</h5>
     <h5>qwe4</h5>
 </div>
+
+<!--form[action=# method=POST]>input[type=text name=text$]*5+select[name=selection]>option[value=$]{option$}*5^input[type=checkbox name=chk$]{optional $}+button[type=submit]{Send}-->
+<form action="#" method="POST">
+    <div>
+    <input type="text" name="text1">
+    <input type="text" name="text2">
+    <input type="text" name="text3">
+    <input type="text" name="text4">
+    <input type="text" name="text5">
+    </div>
+    <select name="selection" id="selection">
+        <option value="1">option1</option>
+        <option value="2">option2</option>
+        <option value="3">option3</option>
+        <option value="4">option4</option>
+        <option value="5">option5</option>
+    </select>
+    <input type="checkbox" name="chk1">optional 1
+    <input type="checkbox" name="chk2">optional 2
+    <input type="checkbox" name="chk3">optional 3
+    <button type="submit">Send</button>
+    <button type="reset">reset</button>
+</form>
 <script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 define(['jquery'],function(){
-    $(function(){
+    //$(function(){
+    document.onload = (function(){
         console.log('all dziala');
     });
 
@@ -61,14 +62,30 @@ define(['jquery'],function(){
 
     $('p').on('click',function(){
         $(this).hide(2000);
-    })
+    });
 
 
     //Wybiera drugi z wystepujacej obok siebie pary lementow
-    $('p + h5').css('background-color', 'red')
+    $('p + h5').css('background-color', 'red');
 
     // WSZYSTKIE ELEMENTY 2 TYPU WYSTEPUJACE JAKO SYBLINGI PO 1 ELEMENCIE !!PO nim!!
-    $('p ~ h5').css('color', 'green')
+    $('p ~ h5').css('color', 'green');
+
+    $(':submit').on('click', function(e){
+        e.preventDefault();
+        //selector :text dziala jak [type=text]
+        //:password :checkbox :submit itd tak samo
+        $(':input[type=text][name!=text2]').each(function(){
+            console.log($(this).attr('name')+' -> '+$(this).val())
+        });
+
+        $(':checked').each(function(){
+            console.log($(this).attr('name'))
+        })
+    });
+    $(':input').each(function(){
+        console.log($(this).attr('name')+' -> '+$(this).val())
+    });
 
 
 
