@@ -47,4 +47,33 @@ define(['jquery'],function(){
     //ATRYBUT class ZAWIERA string stuff
     $('[class*=stuff]').css('font-weight', "700")
 
+    $('.list2 li:even').css('color', 'green');
+    $('.list2 li:first').css('color', 'orange');
+    //INDEXOWANE OD 1 tak jak w ccsie
+    $('.list2 li:nth-child(4)').css('color', 'orange');
+    $('.list2 li:nth-last-of-type(2)').css('color', 'red');
+
+    //INDEX 0 BASED jest ejszcze lt
+    $('.list1 li:eq(2)').css('background-color', 'orange');
+    $('.list1 li:gt(5)').css('background-color', 'green');
+    //Wszystko co rodzenstwem oprocz wybranego
+    $('p:first').siblings().css('border', '2px solid #FFFF00')
+
+    $('p').on('click',function(){
+        $(this).hide(2000);
+    })
+
+
+    //Wybiera drugi z wystepujacej obok siebie pary lementow
+    $('p + h5').css('background-color', 'red')
+
+    // WSZYSTKIE ELEMENTY 2 TYPU WYSTEPUJACE JAKO SYBLINGI PO 1 ELEMENCIE !!PO nim!!
+    $('p ~ h5').css('color', 'green')
+
+
+
+    //Sa jeszcze ~= - ktory wybiera to co zawira slowo (moze byc oddzielone spacja)?
+    // Dla klas troche bez sensu
+
+    // |= - gdy uzyjemy [cos |= slowo] wybiera slowo lub slowo-cos
 });
