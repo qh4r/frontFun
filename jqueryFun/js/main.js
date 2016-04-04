@@ -61,7 +61,10 @@ define(['jquery'],function(){
     $('p:first').siblings().css('border', '2px solid #FFFF00')
 
     $('p').on('click',function(){
-        $(this).hide(2000);
+        $(this).hide(2000, function(){
+            console.log('thisss',this)
+            $(this).show(2000, "swing");
+        });
     });
 
 
@@ -87,7 +90,20 @@ define(['jquery'],function(){
         console.log($(this).attr('name')+' -> '+$(this).val())
     });
 
+    $('.list1 li').on('click',function(){
+        //html() jak innerHtml
+        //text(0 jak innerText w dom
+        console.log($(this).text());
+        $(this).fadeOut(2000, function(){
+            $(this).fadeIn(2000, "swing");
+        });
+    });
 
+    $('.list2 li').on('click',function(){
+        $(this).slideUp(2000, function(){
+            $(this).slideDown(2000, "swing");
+        });
+    });
 
     //Sa jeszcze ~= - ktory wybiera to co zawira slowo (moze byc oddzielone spacja)?
     // Dla klas troche bez sensu
