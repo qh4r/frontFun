@@ -1,1 +1,1 @@
-define(["domReady"],function(n){n(function(){console.log("dziala")})});
+define(["domReady","jquery"],function(o){o(function(){console.log("dziala")}),$("#main").on("click",function(){$(this).toggleClass("bg-color")})});

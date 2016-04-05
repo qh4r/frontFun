@@ -67,3 +67,37 @@ strong, b {
 
 .float-right {
   float: right; }
+
+.sidebar {
+  width: 30%;
+  float: right; }
+
+.bg-color {
+  background-color: #00a8e5; }
+
+ul {
+  list-style: none;
+  background-color: #cc484c; }
+  ul li {
+    background-color: #cc484c;
+    float: left;
+    display: inline-block;
+    padding: 10px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+    ul li:hover {
+      background-color: #882629; }
+    ul li a {
+      text-decoration: none;
+      color: #eee; }
+
+#main {
+  float: left;
+  width: 60%; }
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    float: none;
+    width: 100%; }
+  #main {
+    width: 100%; } }

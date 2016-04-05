@@ -1,2 +1,49 @@
 @import "modules/reset";
 @import "modules/base";
+
+$ul-background: #cc484c;
+
+.sidebar {
+  width: 30%;
+  float: right;
+}
+
+.bg-color {
+  background-color: #00a8e5;
+}
+ul {
+  list-style: none;
+  background-color: $ul-background;
+
+  li{
+    background-color: $ul-background;
+
+    float: left;
+    display: inline-block;
+    padding: 10px;
+    transition: all 0.5s;
+    &:hover {
+      background-color: darken($ul-background, 20%);
+    }
+    a {
+      text-decoration: none;
+      color: #eee;
+    }
+  }
+}
+
+#main {
+  float: left;
+  width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    float: none;
+    width: 100%
+  }
+
+  #main {
+    width: 100%;
+  }
+}
