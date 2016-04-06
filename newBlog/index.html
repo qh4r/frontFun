@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>html review</title>
@@ -12,12 +12,104 @@
     <div class="container">
         <div class="branding">
             <img src="img/logo.png" alt="Tchniks">
+
             <h1>Techniks</h1>
         </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">Jeden Post</a></li>
+                <li><a href="#">Dodaj Post</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
+<div class="container">
+    <aside class="sidebar">
+        <!--.search>form[method=POST action=#]>input[type=search placeholder=Wyszukaj...]+input[type=image src=img/search.png alt=Search]-->
+        <div class="search grouping">
+            <form action="#" method="POST">
+                <input type="search" placeholder="Wyszukaj...">
+                <input type="image" src="img/search.png" alt="Search">
+            </form>
+            <nav class="sub-nav">
+                <!--ul>li*6>a-->
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Projektowanie</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Hosting</a></li>
+                    <li><a href="#">Gadżety</a></li>
+                    <li><a href="#">Oprogramowanie</a></li>
+                </ul>
+            </nav>
+            <div class="ad">
+                <img src="img/ad.jpg" alt="Advert">
+            </div>
+        </div>
+    </aside>
+    <section class="content grouping">
+        <article>
+            <header>
+                <h2>Jakiś tam przykładowy artykuł</h2>
 
+                <div class="meta">
+                    Utworzony przez <strong>QH4R 2 dni temu</strong> <span>(3 komentarze)</span>
+                </div>
+            </header>
+            <img src="img/blog1.jpg" alt="post img">
 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ipsum ligula, vestibulum sed mollis a,
+                dictum at diam. Donec in mattis orci. Aliquam at molestie orci. Nunc efficitur, massa at semper congue,
+                eros enim faucibus leo, vel bibendum elit quam at urna. Donec vitae posuere ligula, in gravida nulla.
+                Sed finibus eu augue sed convallis. Nullam sed elit id lorem finibus aliquet. Integer sagittis, mauris
+                ut dapibus interdum, elit elit pretium sem, eu suscipit lorem mauris eget felis.
+            </p>
+            <footer>
+                <a href="#" class="readmore">Czytaj dalej</a>
+            </footer>
+        </article>
+        <article>
+            <header>
+                <h2>Jakiś tam inny przykładowy artykuł</h2>
+
+                <div class="meta">
+                    Utworzony przez <strong>QH4R 4 dni temu</strong> <span>(1 komentarz)</span>
+                </div>
+            </header>
+            <img src="img/blog2.jpg" alt="post img">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ipsum ligula, vestibulum sed mollis a,
+                dictum at diam. Donec in mattis orci. Aliquam at molestie orci. Nunc efficitur, massa at semper congue,
+                eros enim faucibus leo, vel bibendum elit quam at urna. Donec vitae posuere ligula, in gravida nulla.
+                Sed finibus eu augue sed convallis. Nullam sed elit id lorem finibus aliquet. Integer sagittis, mauris
+                ut dapibus interdum, elit elit pretium sem, eu suscipit lorem mauris eget felis.
+            </p>
+
+            <p>Vestibulum sit amet interdum risus. Nullam rutrum consectetur ex et scelerisque. Pellentesque tincidunt
+                luctus elementum. In sit amet ex quam. Donec quis rutrum nisl. Duis posuere vel ligula id lobortis. Ut
+                at pretium urna, ut tempor ligula. Sed ac porta felis. Sed sed pretium leo. Nunc vitae risus leo.
+                Vivamus consequat elementum condimentum. Nunc faucibus convallis orci, sit amet porta metus viverra
+                fermentum. In nisl ex, venenatis nec lobortis vitae, rhoncus a nibh.
+
+            </p>
+            <footer>
+                <a href="#" class="readmore">Czytaj dalej</a>
+            </footer>
+        </article>
+    </section>
+</div>
+<footer class="main-footer">
+    <div class="footer-right">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+</footer>
 <script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
 </body>
 </html>
