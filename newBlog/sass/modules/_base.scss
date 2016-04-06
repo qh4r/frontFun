@@ -20,3 +20,23 @@
   float: right;
 }
 
+a {
+  color: $link-color-base;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+}
+

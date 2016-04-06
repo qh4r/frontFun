@@ -1,0 +1,62 @@
+.sidebar {
+  float: right;
+  width: 30%;
+}
+
+.search {
+  float: right;
+
+  input[type=search] {
+    width: 85%;
+    border: {
+      style: solid;
+      width: 1px;
+      radius: 4px;
+      color: #ccc;
+    };
+    padding: 3px;
+    height: 20px;
+  }
+  input[type=image] {
+    float: right;
+    height: 20px;
+    margin: 2px 5px 0;
+  }
+}
+
+
+.sub-nav {
+   padding: 20px 0;
+
+  li {
+    font: {
+      size: 16px;
+      weight: bold;
+    }
+    border-bottom: {
+      style: dashed;
+      width: 1px;
+      color: #333;
+    }
+    padding: 5px;
+    transition: all 0.5s;
+
+    &:hover, &:active {
+      border-color: red;
+      a {
+        color: red;
+      }
+    }
+
+    a {
+      transition: all 0.5s;
+      color: #333;
+    }
+  }
+}
+
+.ad {
+  img {
+    width: 100%;
+  }
+}

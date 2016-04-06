@@ -1,0 +1,68 @@
+.content {
+  float: left;
+  width: 63%;
+  border: {
+    width: 1px;
+    style: solid;
+    color: $container-border-color;
+    radius: 10px;
+  }
+  padding: 10px;
+
+}
+
+article {
+  border-bottom: {
+    width: 1px;
+    style: solid;
+    color: $container-border-color;
+  }
+  padding: 10px 0 20px 0;
+
+  h2 {
+    margin: 0;
+    //padding-top: 10px;
+  }
+
+  .readmore {
+    display: block;
+    background: {
+      color: $article-meta-background;
+    };
+    text-align: center;
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    };
+    border: {
+      radius: 8px;
+      color: $header-background;
+      width: 1px;
+      style: solid;
+    };
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: darken($article-meta-background, 10%);
+    }
+  }
+  
+  .meta {
+    margin: {
+      top: 10px;
+      bottom: 10px;
+    };
+    background-color: $article-meta-background;
+
+    span {
+      float:right;
+      margin-right: 10px;
+    }
+  }
+
+  img {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+}

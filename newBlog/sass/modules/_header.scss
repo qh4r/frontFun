@@ -1,0 +1,49 @@
+.main-header {
+  height: 50px;
+  background-color: $header-background;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .branding {
+    width: 50%;
+    float: left;
+
+    h1 {
+      padding: 5px 0 0 70px;
+      font-size: 2em;
+      color: $header-font-color;
+    }
+
+    img {
+      position: absolute;
+      width: 60px;
+      height: auto;
+    }
+  }
+
+  .main-nav {
+    float: right;
+    width: 50%;
+
+    ul{
+      float: right;
+
+      li{
+        //float: left;
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        a {
+          &:active, &:visited {
+            color: $header-font-color;
+          }
+          color: $header-font-color;
+        }
+      }
+    }
+  }
+}
+
+
