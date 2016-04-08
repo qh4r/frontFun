@@ -115,6 +115,16 @@ ul, ol {
           .main-header .main-nav ul li a:active, .main-header .main-nav ul li a:visited {
             color: #fff; }
 
+@media screen and (max-width: 830px) {
+  .main-header {
+    height: 100px; }
+    .main-header .branding {
+      width: 100%; }
+    .main-header .main-nav {
+      margin-top: 10px;
+      float: left;
+      width: 100%; } }
+
 .sidebar {
   float: right;
   width: 30%; }
@@ -157,6 +167,17 @@ ul, ol {
 
 .ad img {
   width: 100%; }
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    margin: auto;
+    float: none;
+    width: 80%; }
+    .sidebar .search {
+      float: none; }
+  .ad {
+    height: 0px;
+    overflow: hidden; } }
 
 .content {
   float: left;
@@ -206,6 +227,12 @@ article {
     width: 80%;
     display: block;
     margin: auto; }
+
+@media screen and (max-width: 900px) {
+  .content {
+    margin: auto;
+    width: 80%;
+    float: none; } }
 
 .main-footer {
   background: #333;

@@ -46,4 +46,19 @@
   }
 }
 
+@media screen and (max-width: 830px) {
+  .main-header {
+    height: 100px;
+
+    .branding {
+      width: 100%;
+    }
+    .main-nav {
+      margin-top: 10px;
+      float: left;
+      width: 100%;
+    }
+  }
+}
+
 
