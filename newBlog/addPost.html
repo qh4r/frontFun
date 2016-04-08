@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>html review</title>
+</head>
+<body>
+<header class="main-header">
+    <div class="container">
+        <div class="branding">
+            <img src="img/logo.png" alt="Tchniks">
+
+            <h1>Techniks</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">Jeden Post</a></li>
+                <li><a href="#">Dodaj Post</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <aside class="sidebar">
+        <!--.search>form[method=POST action=#]>input[type=search placeholder=Wyszukaj...]+input[type=image src=img/search.png alt=Search]-->
+        <div class="search grouping">
+            <form action="#" method="POST">
+                <input type="search" placeholder="Wyszukaj...">
+                <input type="image" src="img/search.png" alt="Search">
+            </form>
+            <nav class="sub-nav">
+                <!--ul>li*6>a-->
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Projektowanie</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Hosting</a></li>
+                    <li><a href="#">Gadżety</a></li>
+                    <li><a href="#">Oprogramowanie</a></li>
+                </ul>
+            </nav>
+            <div class="ad">
+                <img src="img/ad.jpg" alt="Advert">
+            </div>
+        </div>
+    </aside>
+    <section class="content grouping">
+        <div class="add-post">
+            <h2>Dodaj Post</h2>
+
+            <form action="Post">
+                <p><label for="title">Tytuł</label><input id="title" type="text"></p>
+
+                <p><label for="category">Kategoria</label><select id="category">
+                    <option value="1">Development</option>
+                    <option value="2">Projektowanie</option>
+                    <option value="3">Hosting</option>
+                    <option value="4">Gadźety</option>
+                    <option value="5">Oprogramowanie</option>
+                </select></p>
+
+                <p><label for="body">Zawartość</label><textarea id="body">
+
+                </textarea></p>
+
+                <p><label for="image">Grafika</label><input id=image type="file"></p>
+                <p>
+                    <button>Dodaj</button>
+                </p>
+            </form>
+        </div>
+    </section>
+</div>
+<footer class="main-footer">
+
+    <div class="container grouping">
+        <div class="footer-right">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Start</a></li>
+                    <li><a href="#">O nas</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Zasoby</a></li>
+                    <li><a href="#">Zasady</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Proejktowanie</a></li>
+                    <li><a href="#">Hosting</a></li>
+                    <li><a href="#">Gadżety</a></li>
+                    <li><a href="#">Oprogramowanie</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-left">
+            <p class="copy">&copy qh4r</p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
+</body>
+</html>

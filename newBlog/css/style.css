@@ -173,6 +173,10 @@ article {
   border-bottom-style: solid;
   border-bottom-color: #ccc;
   padding: 10px 0 20px 0; }
+  article > p {
+    margin: 10px 5px; }
+  article:last-of-type {
+    border-style: none; }
   article h2 {
     margin: 0; }
   article .readmore {
@@ -193,6 +197,7 @@ article {
   article .meta {
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 10px;
     background-color: #ddd; }
     article .meta span {
       float: right;
@@ -219,3 +224,79 @@ article {
   .main-footer .footer-nav {
     float: left;
     margin: 10px 30px; }
+
+.comments {
+  margin-top: 20px; }
+  .comments .comment-left {
+    float: left;
+    width: 20%; }
+    .comments .comment-left img {
+      width: 100%; }
+  .comments .comment-right {
+    float: right;
+    width: 75%; }
+  .comments .comment {
+    margin-top: 10px; }
+  .comments .content-form {
+    margin-top: 20px;
+    padding: 5px 20px 10px 20px;
+    background-color: #333;
+    color: #fff;
+    -webkit-border-radius: 10px;
+            border-radius: 10px; }
+    .comments .content-form input[type=text],
+    .comments .content-form input[type=email], .comments .content-form textarea, .comments .content-form .add-post select, .add-post .comments .content-form select {
+      border-color: #ccc;
+      border-width: 1px;
+      border-style: solid;
+      -webkit-border-radius: 5px;
+              border-radius: 5px;
+      padding: 3px;
+      width: 97%; }
+    .comments .content-form input[type=text],
+    .comments .content-form input[type=email] {
+      height: 20px; }
+    .comments .content-form input[type=submit], .comments .content-form button {
+      float: right;
+      display: inline-block;
+      padding: 8px 16px;
+      -webkit-border-radius: 5px;
+              border-radius: 5px;
+      border-color: #ccc;
+      color: #fff;
+      background-color: #777;
+      font-size: 1em;
+      margin-right: 5px; }
+
+.add-post .comments .content-form input[type=text], .comments .content-form .add-post input[type=text], .add-post
+.comments .content-form input[type=email],
+.comments .content-form .add-post input[type=email], .add-post .comments .content-form textarea, .comments .content-form .add-post textarea, .add-post input[type=text], .add-post select, .add-post textarea {
+  border-color: #ccc;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 3px;
+  width: 97%; }
+
+.add-post input[type=text] {
+  height: 20px; }
+
+.add-post select {
+  height: 30px;
+  width: 98.5%; }
+
+.add-post input[type=file] {
+  width: 97%;
+  padding: 3px; }
+
+.add-post input[type=submit], .add-post button {
+  float: right;
+  display: inline-block;
+  padding: 3px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  color: #222;
+  background-color: #FFF;
+  font-size: 0.8em;
+  margin-right: 5px; }

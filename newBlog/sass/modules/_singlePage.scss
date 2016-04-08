@@ -1,0 +1,72 @@
+.comments {
+  margin-top: 20px;
+
+  .comment-left {
+    float: left;
+    width: 20%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .comment-right {
+    float: right;
+    width: 75%;
+  }
+
+  .comment {
+    margin: {
+      top: 10px;
+    }
+  ;
+
+  }
+
+  .content-form {
+    margin: {
+      top: 20px;
+    }
+
+    padding: 5px 20px 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: {
+      radius: 10px;
+    }
+
+    %inputs {
+      border: {
+        color: #ccc;
+        width: 1px;
+        style: solid;
+        radius: 5px;
+      }
+      padding: 3px;
+      width: 97%;
+    }
+
+    input[type=text],
+    input[type=email] {
+      @extend %inputs;
+      height: 20px;
+    }
+
+    input[type=submit], button{
+      float: right;
+      display: inline-block;
+      padding: 8px 16px;
+      border: {
+        radius: 5px;
+        color: #ccc;
+      };
+      color: #fff;
+      background-color: #777;
+      font-size: 1em;
+      margin-right: 5px;
+    }
+
+    textarea {
+      @extend %inputs;
+    }
+  }
+}

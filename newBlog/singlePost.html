@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>html review</title>
+</head>
+<body>
+<header class="main-header">
+    <div class="container">
+        <div class="branding">
+            <img src="img/logo.png" alt="Tchniks">
+
+            <h1>Post</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">Jeden Post</a></li>
+                <li><a href="#">Dodaj Post</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <aside class="sidebar">
+        <!--.search>form[method=POST action=#]>input[type=search placeholder=Wyszukaj...]+input[type=image src=img/search.png alt=Search]-->
+        <div class="search grouping">
+            <form action="#" method="POST">
+                <input type="search" placeholder="Wyszukaj...">
+                <input type="image" src="img/search.png" alt="Search">
+            </form>
+            <nav class="sub-nav">
+                <!--ul>li*6>a-->
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Projektowanie</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Hosting</a></li>
+                    <li><a href="#">Gadżety</a></li>
+                    <li><a href="#">Oprogramowanie</a></li>
+                </ul>
+            </nav>
+            <div class="ad">
+                <img src="img/ad.jpg" alt="Advert">
+            </div>
+        </div>
+    </aside>
+    <section class="content grouping">
+        <article>
+            <header>
+                <h2>Jakiś tam przykładowy artykuł</h2>
+
+                <div class="meta">
+                    Utworzony przez <strong>QH4R 2 dni temu</strong> <span>(3 komentarze)</span>
+                </div>
+            </header>
+            <img src="img/blog1.jpg" alt="post img">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ipsum ligula, vestibulum sed mollis a,
+                dictum at diam. Donec in mattis orci. Aliquam at molestie orci. Nunc efficitur, massa at semper congue,
+                eros enim faucibus leo, vel bibendum elit quam at urna. Donec vitae posuere ligula, in gravida nulla.
+                Sed finibus eu augue sed convallis. Nullam sed elit id lorem finibus aliquet. Integer sagittis, mauris
+                ut dapibus interdum, elit elit pretium sem, eu suscipit lorem mauris eget felis.
+            </p>
+
+            <p>Integer porta lectus mauris, ut tincidunt felis dapibus dapibus. Ut consequat dictum auctor. Vivamus
+                gravida urna et quam consectetur egestas. Etiam vel pharetra dui. Morbi blandit, elit eu ultrices
+                elementum, magna felis faucibus enim, id vehicula tortor leo ut metus. Quisque pretium finibus diam eu
+                posuere. Quisque lacinia elit at facilisis rhoncus. Integer lorem nibh, ultricies non arcu nec, dictum
+                euismod quam. Proin vestibulum enim at odio pharetra condimentum.</p>
+
+            <p>Vestibulum tristique ante nec orci convallis aliquet. In fermentum imperdiet mauris, et porttitor sem
+                feugiat eget. Integer venenatis consequat eros in interdum. Sed molestie justo ipsum, ac placerat mauris
+                tincidunt varius. Nunc ac turpis est. Cras posuere commodo tortor ut placerat. Morbi et tempor ipsum.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse
+                platea dictumst.</p>
+
+            <p>Morbi laoreet risus neque, vel venenatis tortor elementum vel. Sed elementum sollicitudin nibh, nec
+                tristique odio interdum in. Integer metus massa, molestie ultricies cursus quis, elementum et dolor.
+                Aenean id odio in mi mollis ullamcorper. Maecenas vitae dolor molestie, semper velit sed, molestie
+                justo. Nullam facilisis risus a malesuada vestibulum. Vivamus lobortis, turpis quis mattis porttitor,
+                elit nisi volutpat elit, non elementum magna mauris quis dui. Suspendisse egestas vulputate volutpat. Ut
+                at aliquet massa, eget efficitur augue. Vivamus convallis, neque sit amet ultrices egestas, lectus magna
+                imperdiet quam, blandit suscipit nulla nibh ut lacus. Cras pulvinar mollis felis, a efficitur lacus.
+                Donec pellentesque, purus in rutrum aliquam, lacus metus finibus nulla, et ullamcorper nisl mi nec
+                nisl.</p>
+            <footer class="comments">
+                <h3>
+                    Ostatnio dodane
+                </h3>
+
+                <div class="comment grouping">
+                    <div class="comment-left">
+                        <img src="img/avatar.png">
+                    </div>
+                    <div class="comment-right">
+                        <strong>Tomasz Krzsysiak</strong>
+
+                        <p>ALe zjebisty artykuł najlepszy jaki czytałem po prostu</p>
+                    </div>
+                </div>
+                <div class="comment grouping">
+                <div class="comment-left">
+                    <img src="img/avatar.png">
+                </div>
+                <div class="comment-right">
+                    <strong>Basia Jagniak</strong>
+
+                    <p>No serio zajebisty, potwierdzam!1!</p>
+                </div>
+                </div>
+                <div class="content-form grouping">
+                    <h3>Zostaw komentarz</h3>
+
+                    <form action="Post">
+                        <p><label for="name">Name</label><input id="name" type="text"></p>
+
+                        <p><label for="email">Email</label><input id="email" type="email"></p>
+
+                        <p><label for="comment">Comment</label><textarea id="comment"></textarea></p>
+
+                        <!--<input type="submit" value="Dodaj">-->
+                        <p><button type="submit">Dodaj</button></p>
+                    </form>
+                </div>
+            </footer>
+        </article>
+    </section>
+</div>
+<footer class="main-footer">
+
+    <div class="container grouping">
+        <div class="footer-right">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Start</a></li>
+                    <li><a href="#">O nas</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Zasoby</a></li>
+                    <li><a href="#">Zasady</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Proejktowanie</a></li>
+                    <li><a href="#">Hosting</a></li>
+                    <li><a href="#">Gadżety</a></li>
+                    <li><a href="#">Oprogramowanie</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-left">
+            <p class="copy">&copy qh4r</p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
+</body>
+</html>
