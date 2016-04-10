@@ -1,2 +1,87 @@
 @import "modules/reset";
 @import "modules/base";
+
+$text-color-global: #fcfcfc;
+$background-color: #ccc;
+$link-color: #54a6de;
+$navbar-bg-color: #13181d;
+$navbar-link: #fff;
+$active-background: #333;
+$footer-font-color: #333;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $text-color-global;
+  font: {
+    size:  14px;
+    family: 'Segoe UI', Arial, sans-serif;
+  }
+  background-color: $background-color;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: $link-color;
+}
+
+.container {
+  width: 70%;
+  margin: 10px auto;
+  overflow: auto;
+}
+
+#navbar {
+  display: block;
+  height: 40px;
+  background-color: $navbar-bg-color;
+
+  a {
+    color: $navbar-link;
+    display: inline-block;
+    height: 40px;
+    line-height: 37px;
+    padding: 0 15px;
+
+    &.active, &:hover {
+      background-color: $active-background;
+    }
+  }
+}
+
+.main {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 475px;
+
+  ul {
+    //Ukrywa scrolle
+    overflow: hidden;
+  }
+  li {
+    float: left;
+    height: 96px;
+    list-style: none;
+    margin: 6px;
+    position: relative;
+    box-shadow: 0 0 5px #000;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  color: $footer-font-color;
+  font: {
+    size: 16px;
+    weight: bold;
+  }
+}
