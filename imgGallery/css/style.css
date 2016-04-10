@@ -109,6 +109,8 @@ a {
   min-height: 475px; }
   .main ul {
     overflow: hidden; }
+    .main ul.hidden {
+      display: none; }
   .main li {
     float: left;
     height: 96px;

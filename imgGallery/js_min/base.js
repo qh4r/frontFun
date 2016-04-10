@@ -1,0 +1,1 @@
+define(["require","jquery"],function(e){console.log("bASE")});

@@ -62,6 +62,9 @@ a {
   ul {
     //Ukrywa scrolle
     overflow: hidden;
+    &.hidden{
+      display: none;
+    }
   }
   li {
     float: left;
