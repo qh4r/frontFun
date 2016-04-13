@@ -68,9 +68,13 @@ strong, b {
 .float-right {
   float: right; }
 
-#myCanvas {
+#myCanvas, #myCanvas2 {
   border-width: 1px;
   border-color: #2ca2af;
   border-style: solid;
   width: 400px;
   height: 150px; }
+
+#myCanvas2 {
+  width: 600px;
+  height: 400px; }

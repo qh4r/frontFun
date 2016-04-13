@@ -2,7 +2,7 @@
 @import "modules/base";
 
 
-#myCanvas {
+#myCanvas, #myCanvas2 {
   border: {
     width: 1px;
     color: #2ca2af;
@@ -10,4 +10,9 @@
   }
   width: 400px;
   height: 150px;
+}
+
+#myCanvas2 {
+  width: 600px;
+  height: 400px;
 }
