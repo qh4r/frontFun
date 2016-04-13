@@ -1,0 +1,1 @@
+define(["domReady"],function(e){e(function(){function e(){f.fillStyle="#ffff00",f.fillRect(10,10,100,100),f.fillStyle="#ff0000",f.fillRect(40,40,100,100)}console.log("dziala");var f=function(){var e=document.getElementById("myCanvas");return e.getContext("2d")}();e()})});

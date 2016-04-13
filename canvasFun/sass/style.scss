@@ -1,0 +1,13 @@
+@import "modules/reset";
+@import "modules/base";
+
+
+#myCanvas {
+  border: {
+    width: 1px;
+    color: #2ca2af;
+    style: solid;
+  }
+  width: 400px;
+  height: 150px;
+}
