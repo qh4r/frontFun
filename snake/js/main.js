@@ -5,6 +5,8 @@ define(['domReady', 'jquery'], function (domReady) {
         var gameboard = (function () {
             var canvas = $('#canvas')[0],
                 scoreElement = $('#score')[0],
+                overlay = $('#overlay')[0],
+                finalScore = $('#final-score')[0],
                 highScoreElement = $('#high-score')[0],
                 context = this.canvas.getContext('2d'),
                 width = this.canvas.width,
@@ -17,7 +19,8 @@ define(['domReady', 'jquery'], function (domReady) {
                 logOn = false,
                 direction = "",
                 score = 0,
-                topScore = -1;
+                topScore = -1,
+                gameLoop;
 
             checkScore(0);
 
@@ -39,10 +42,6 @@ define(['domReady', 'jquery'], function (domReady) {
                     y: Math.round(Math.random() * (height - cellWidth) / cellWidth)
                 }
             };
-
-            function getSpeed() {
-                return speed;
-            }
 
             function checkForCollision(x, y, arr) {
                 if (logOn)console.log(arr, x, y);
@@ -95,7 +94,8 @@ define(['domReady', 'jquery'], function (domReady) {
                 if (nx === -1 || nx >= width / cellWidth ||
                     ny === -1 || ny >= height / cellWidth ||
                     checkForCollision(nx, ny, snakeArray)) {
-                    return init(board);
+                    clearLoop();
+                    return toggleOverlay();
                 }
 
                 if (nx === food.x && ny === food.y) {
@@ -138,15 +138,40 @@ define(['domReady', 'jquery'], function (domReady) {
                 logOn = !logOn;
             }
 
+            function startLoop(){
+                gameLoop = setInterval(paint, speed);
+            }
+
+            function clearLoop(){
+                if (gameLoop && typeof gameLoop != "undefined") clearInterval(gameLoop);
+            }
+
+            function resetHighScore(){
+                topScore = 0;
+                highScoreElement.innerHTML = topScore;
+            }
+
+            function toggleOverlay() {
+                finalScore.innerHTML = score;
+                $(overlay).toggleClass('show');
+            }
+
+            $('#reaload-btn').on('click',function(){
+                toggleOverlay();
+                init(board);
+            });
+
             var board = {
-                getSpeed: getSpeed,
                 createSnake: createSnake,
                 createFood: createFood,
                 paint: paint,
                 setDirection: setDirection,
                 getDirection: getDirection,
                 toggleLogging: toggleLogging,
-                resetScore: resetScore
+                resetScore: resetScore,
+                startLoop: startLoop,
+                clearLoop: clearLoop,
+                resetHighScore: resetHighScore
             };
             return board;
         })();
@@ -155,10 +180,7 @@ define(['domReady', 'jquery'], function (domReady) {
             gameboard.createSnake();
             gameboard.createFood();
             gameboard.setDirection("right");
-
-            if (gameboard.gameLoop && typeof gameboard.gameLoop != "undefined") clearInterval(gameboard.gameLoop);
-            gameboard.gameLoop = setInterval(gameboard.paint, gameboard.getSpeed());
-
+            gameboard.startLoop();
             gameboard.resetScore();
             gameboard.paint();
             console.log('started')
@@ -179,7 +201,13 @@ define(['domReady', 'jquery'], function (domReady) {
                         return gameboard.getDirection() !== "up" ? gameboard.setDirection("down") : gameboard.getDirection();
                 }
             });
+
+            $('#reset-btn').on('click',function(e){
+                gameboard.resetHighScore();
+                e.preventDefault();
+            });
         })(gameboard);
+
 
         init(gameboard);
     });
