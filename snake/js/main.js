@@ -4,6 +4,8 @@ define(['domReady', 'jquery'], function (domReady) {
 
         var gameboard = (function () {
             var canvas = $('#canvas')[0],
+                scoreElement = $('#score')[0],
+                highScoreElement = $('#high-score')[0],
                 context = this.canvas.getContext('2d'),
                 width = this.canvas.width,
                 direction = 'right',
@@ -12,7 +14,16 @@ define(['domReady', 'jquery'], function (domReady) {
                 speed = 150,
                 snakeArray = [],
                 food = {},
-                direction = "";
+                logOn = false,
+                direction = "",
+                score = 0,
+                topScore = -1;
+
+            checkScore(0);
+
+            function resetScore() {
+                score = 0;
+            };
 
             function createSnake() {
                 var length = 4;
@@ -24,8 +35,8 @@ define(['domReady', 'jquery'], function (domReady) {
 
             function createFood() {
                 food = {
-                    x: Math.round(Math.random()*(width - cellWidth) / cellWidth),
-                    y: Math.round(Math.random()*(height - cellWidth) / cellWidth)
+                    x: Math.round(Math.random() * (width - cellWidth) / cellWidth),
+                    y: Math.round(Math.random() * (height - cellWidth) / cellWidth)
                 }
             };
 
@@ -34,25 +45,30 @@ define(['domReady', 'jquery'], function (domReady) {
             }
 
             function checkForCollision(x, y, arr) {
-                arr.forEach(function(elem){
-                    if(elem.x === x && elem.y === y){
-                        return true;
-                    }
-                });
-                return false;
+                if (logOn)console.log(arr, x, y);
+                return arr.filter(function (elem) {
+
+                    return (elem.x === x && elem.y === y)
+                    //console.log(elem, x, y, true);
+
+                }).length;
             }
+
+            function checkScore() {
+                scoreElement.innerHTML = score;
+                if(score > topScore) {
+                    topScore = score;
+                    highScoreElement.innerHTML = topScore;
+                }
+            };
 
             function paint() {
 
                 function paintCell(x, y) {
                     context.fillStyle = '#FFF';
-                    context.fillRect(x*cellWidth, y*cellWidth, cellWidth, cellWidth);
+                    context.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
                     context.strokeStyle = '#F00';
-                    context.strokeRect(x*cellWidth, y*cellWidth, cellWidth, cellWidth);
-                };
-
-                function checkScore(){
-
+                    context.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
                 };
 
                 context.fillStyle = '#000';
@@ -70,19 +86,19 @@ define(['domReady', 'jquery'], function (domReady) {
                     case "left":
                         nx--;
                         break;
-                    case "up":
+                    case "down":
                         ny++;
                         break;
-                    case "down":
+                    case "up":
                         ny--;
                 }
-                if (nx === -1 || nx === width / cellWidth ||
-                    ny === -1 || ny === height / cellWidth ||
+                if (nx === -1 || nx >= width / cellWidth ||
+                    ny === -1 || ny >= height / cellWidth ||
                     checkForCollision(nx, ny, snakeArray)) {
                     return init(board);
                 }
 
-                if(nx === food.x && ny === food.y){
+                if (nx === food.x && ny === food.y) {
                     var tail = {
                         x: nx, y: ny
                     };
@@ -99,7 +115,7 @@ define(['domReady', 'jquery'], function (domReady) {
 
                 }
 
-                for(var i = 0; i< snakeArray.length; i++){
+                for (var i = 0; i < snakeArray.length; i++) {
                     var c = snakeArray[i];
                     paintCell(c.x, c.y);
                 }
@@ -114,13 +130,24 @@ define(['domReady', 'jquery'], function (domReady) {
                 direction = dir;
             }
 
+            function getDirection() {
+                return direction;
+            }
+
+            function toggleLogging() {
+                logOn = !logOn;
+            }
+
             var board = {
                 getSpeed: getSpeed,
                 createSnake: createSnake,
                 createFood: createFood,
                 paint: paint,
-                setDirection: setDirection
-            }
+                setDirection: setDirection,
+                getDirection: getDirection,
+                toggleLogging: toggleLogging,
+                resetScore: resetScore
+            };
             return board;
         })();
 
@@ -128,14 +155,31 @@ define(['domReady', 'jquery'], function (domReady) {
             gameboard.createSnake();
             gameboard.createFood();
             gameboard.setDirection("right");
-            gameboard.score = 0;
 
             if (gameboard.gameLoop && typeof gameboard.gameLoop != "undefined") clearInterval(gameboard.gameLoop);
             gameboard.gameLoop = setInterval(gameboard.paint, gameboard.getSpeed());
 
+            gameboard.resetScore();
             gameboard.paint();
             console.log('started')
         };
+
+        (function (gameboard) {
+            $(document).on('keydown', function (e) {
+                switch (e.which) {
+                    case 32:
+                        return gameboard.toggleLogging();
+                    case 37:
+                        return gameboard.getDirection() !== "right" ? gameboard.setDirection("left") : gameboard.getDirection();
+                    case 38:
+                        return gameboard.getDirection() !== "down" ? gameboard.setDirection("up") : gameboard.getDirection();
+                    case 39:
+                        return gameboard.getDirection() !== "left" ? gameboard.setDirection("right") : gameboard.getDirection();
+                    case 40:
+                        return gameboard.getDirection() !== "up" ? gameboard.setDirection("down") : gameboard.getDirection();
+                }
+            });
+        })(gameboard);
 
         init(gameboard);
     });
