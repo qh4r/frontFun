@@ -11,6 +11,7 @@ define(['domReady', 'jquery'], function (domReady) {
                 context = this.canvas.getContext('2d'),
                 width = this.canvas.width,
                 direction = 'right',
+                nextDirection = 'direction',
                 height = this.canvas.height,
                 cellWidth = 15,
                 speed = 150,
@@ -72,12 +73,13 @@ define(['domReady', 'jquery'], function (domReady) {
 
                 context.fillStyle = '#000';
                 context.fillRect(0, 0, width, height);
-                context.strokeStyle = '#FFF'
+                context.strokeStyle = '#FFF';
                 context.fillRect(0, 0, width, height);
 
                 var nx = snakeArray[0].x;
                 var ny = snakeArray[0].y;
 
+                direction = nextDirection;
                 switch (direction) {
                     case "right":
                         nx++;
@@ -127,7 +129,7 @@ define(['domReady', 'jquery'], function (domReady) {
             }
 
             function setDirection(dir) {
-                direction = dir;
+                nextDirection = dir;
             }
 
             function getDirection() {
