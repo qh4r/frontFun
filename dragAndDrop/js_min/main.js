@@ -1,0 +1,1 @@
+define(["domReady"],function(n){n(function(){console.log("dziala")})});
