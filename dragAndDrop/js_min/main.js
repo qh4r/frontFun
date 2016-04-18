@@ -1,1 +1,1 @@
-define(["domReady"],function(n){n(function(){console.log("dziala")})});
+define(["domReady","./note"],function(o,n){o(function(){var o=function(o){function n(o){console.log("db -> ",o)}if(o.openDatabase){var e=o.openDatabase("noteTest2","1.0","notes test db one",10485760,n);if(!e)throw new Error("db not accessible");return e}throw new Error("db not supported")}(window);new n;console.log(o),console.log("dziala")})});
