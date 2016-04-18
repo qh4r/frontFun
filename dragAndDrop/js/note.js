@@ -133,13 +133,15 @@ define(function(){
             document.addEventListener("mousemove", this.mouseMoveHandler, true);
             document.addEventListener("mouseup", this.mouseUpHandler, true);
         },
-        onNoteClick: function onNoteClick(e) {
-            console.log(this.db)
+        onNoteClick: function onNoteClick() {
+            this.editField.focus();
+            getSelection().collapseToEnd();
         },
         onKeyUp: function onKeyUp(e) {
-
+            this.dirty = true;
+            this.saveCounter();
         },
-        close: function close(e) {
+        close: function close() {
             this.cancelPendingSave();
             this.db.transaction(function(t){
                 t.executeSql("delete from MyNotes where id = ?", [this.id]);
@@ -153,7 +155,7 @@ define(function(){
             clearTimeout(this._saveTimer);
             delete this._saveTimer;
         },
-        saveSoon: function saveSoon(){
+        saveCounter: function saveCounter(){
             this.cancelPendingSave();
             this._saveTimer = setTimeout(function(){
                 this.save();
@@ -188,7 +190,7 @@ define(function(){
         return false;
     }
 
-    function onMouseUp(){
+    function onMouseUp() {
         document.removeEventListener("mousemove", this.mouseMoveHandler, true);
         document.removeEventListener("mouseup", this.mouseUpHandler, true);
 
