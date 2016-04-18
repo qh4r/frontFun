@@ -20,7 +20,8 @@ define(['domReady', './note'], function (domReady, Note) {
             }
         })(window);
 
-        var x = new Note();
+        var x = new Note(document.body, db);
+        var x2 = new Note(document.body, db);
         console.log(db);
         console.log("dziala");
     });
