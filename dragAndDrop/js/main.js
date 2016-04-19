@@ -1,7 +1,6 @@
 define(['domReady', './note'], function (domReady, Note) {
 
     domReady(function () {
-        //console.log(document.getElementsByTagName('html')[0].innerHTML);
         var db = (function (window) {
             if (window.openDatabase) {
                 var db = window.openDatabase("noteTest2", "1.0", "notes test db one", 10 * 1024 * 1024,
@@ -19,10 +18,13 @@ define(['domReady', './note'], function (domReady, Note) {
                 //gets called only during first creation of db version?
             }
         })(window);
-
-        var x = new Note(document.body, db);
-        var x2 = new Note(document.body, db);
-        console.log(db);
-        console.log("dziala");
+        var notes = (function(container ,db){
+            var notes = [];
+            var newNoteButton = document.getElementById("new-note-btn");
+            newNoteButton.addEventListener('click', function(){
+                notes.push(new Note(container, db));
+            });
+            return notes;
+        })(document.body, db);
     });
 });
