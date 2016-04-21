@@ -1,7 +1,11 @@
 define(function(){
     var current = null, highestZ = 0;
     var lastId = 0;
-    function Note(container, db) {
+
+    //STOP PROPAGATION BLOKUJE BUBBLE
+    //document.addEventListener("mousedown", function(e){e.stopPropagation(); console.log('body --> ',e)}, true)
+
+    function Note(container, db, left, top) {
         //NOTE
         this.db = db;
 
@@ -12,11 +16,20 @@ define(function(){
             return this.onMouseDown(e);
         }.bind(this), false);
 
+        note.addEventListener('contextmenu', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+           console.log('context', e);
+        }.bind(this), false);
+
         note.addEventListener('click', function (e) {
             return this.onNoteClick(e);
         }.bind(this), false);
 
         this.note = note;
+
+        this.left = left;
+        this.top = top;
 
         //CLOSE btn
         var close = document.createElement('div');
@@ -117,6 +130,12 @@ define(function(){
         set zIndex(val){
             this.note.style.zIndex = val;
         },
+        get color(){
+            return this.note.style.backgroundColor;
+        },
+        set color(val){
+            this.note.style.backgroundColor = val;
+        },
         onMouseDown: function onMouseDown(e) {
             current = this;
             this.startX = e.clientX - this.note.offsetLeft;
@@ -197,6 +216,7 @@ define(function(){
         this.save();
         return false;
     }
+
 
     return Note;
 });

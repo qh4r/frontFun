@@ -1,4 +1,4 @@
-define(['domReady', './note'], function (domReady, Note) {
+define(['domReady', './addButton', './note'], function (domReady, AddButton, Note) {
 
     domReady(function () {
         var db = (function (window) {
@@ -18,13 +18,20 @@ define(['domReady', './note'], function (domReady, Note) {
                 //gets called only during first creation of db version?
             }
         })(window);
-        var notes = (function(container ,db){
-            var notes = [];
-            var newNoteButton = document.getElementById("new-note-btn");
-            newNoteButton.addEventListener('click', function(){
-                notes.push(new Note(container, db));
-            });
-            return notes;
-        })(document.body, db);
+        //var notes = (function(container ,db){
+        //    var notes = [];
+        //    var newNoteButton = document.getElementById("new-note-btn");
+        //    newNoteButton.addEventListener('click', function(){
+        //        notes.push(new Note(container, db));
+        //    });
+        //    return notes;
+        //})(document.body, db);
+
+        document.addEventListener('contextmenu', function(e){
+            e.preventDefault();
+            var button = new AddButton(document.body, db, e.x, e.y);
+        })
     });
+
+
 });

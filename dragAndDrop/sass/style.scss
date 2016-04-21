@@ -25,9 +25,13 @@ body {
   };
   background-color: $btn-background;
   color: $btn-font-color;
-
+  position: absolute;
   &:hover {
     background-color: $btn-background-active;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 
