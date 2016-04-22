@@ -27,15 +27,46 @@ define(['domReady', './addButton', './note'], function (domReady, AddButton, Not
         //    return notes;
         //})(document.body, db);
 
-        document.addEventListener('contextmenu', function(e){
-            e.preventDefault();
-            var button = new AddButton(document.body, db, e.x, e.y);
-        })
+        function loaded() {
+            db.transaction(function (tx) {
+                tx.executeSql("SELECT COUNT(*) FROM MyNotes", [], function (result) {
+                    loadAllNotes();
+                }, function (tx, err) {
+                    console.log("ERROR --> ", err.message);
+                    tx.executeSql("CREATE TABLE MyNotes (id REAL UNIQUE, note TEXT, timestamp REAL, left TEXT, top TEXT, zindex REAL, color TEXT)",
+                        [], function (result) {
+                            loadAllNotes();
+                        }, function(tx, err){
+                            console.log("ERROR --> ", err.message);
+                        })
+                })
+            })
+        }
+
+        function loadAllNotes() {
+            db.transaction(function (tx) {
+                tx.executeSql("SELECT id, note, timestamp, left, top, zindex, color FROM MyNotes",
+                    [], function (tx, res) {
+                        var notes = [];
+                        for (var i = 0; i < res.rows.length; i++) {
+                            var row = res.rows.item(i);
+                            var note = new Note(document.body, db, row['left'], row['top'], row['zindex'],row['color'], row['id']);
+                            note.text = row['note'] || "";
+                            note.timestamp = row['timestamp'];
+                            notes.push(note);
+                        }
+                        document.addEventListener('contextmenu', function (e) {
+                            e.preventDefault();
+                            var button = new AddButton(document.body, db, e.x, e.y, notes);
+                        });
+                    }, function(tx, err){
+                        console.log("ERROR --> ", err.message);
+                    })
+            })
+        }
+
+        loaded();
     });
 
-    //function loaded() {
-    //    db.transaction(function(tx){
-    //        tx.
-    //    })
-    //}
+
 });

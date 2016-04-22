@@ -1,6 +1,7 @@
 define(['./note'], function (Note) {
 
-    var AddButton = function (context, db, left, top) {
+    var AddButton = function (context, db, left, top, notes) {
+        this.notes = notes;
         this.button = document.createElement('button');
         this.button.className = 'new-note-btn';
         this.button.textContent = "Dodaj Nowy"
@@ -23,11 +24,13 @@ define(['./note'], function (Note) {
     };
 
     AddButton.prototype = {
+        set notes(val){
+          this._notes = val;
+        },
         onClick: (function () {
-            var _notes = [];
             return function onClick(e) {
                 this.button.removeEventListener('blur', this.removeHandler);
-                _notes.push(new Note(this.context, this.db, this.left, this.top));
+                this._notes.push(new Note(this.context, this.db, this.left, this.top));
                 this.context.removeChild(this.button);
                 delete this;
             };

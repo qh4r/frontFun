@@ -5,9 +5,19 @@ define(function(){
     //STOP PROPAGATION BLOKUJE BUBBLE
     //document.addEventListener("mousedown", function(e){e.stopPropagation(); console.log('body --> ',e)}, true)
 
-    function Note(container, db, left, top) {
-        //NOTE
+    function Note(container, db, left, top, zIndex, color, id) {
+
         this.db = db;
+
+
+        highestZ = !zIndex || (highestZ > zIndex) ? highestZ : zIndex;
+
+        if(!isNaN(id)){
+            this.id = id;
+            if(id >= lastId){
+                lastId = id + 1;
+            }
+        }
 
         var note = document.createElement('div');
         note.className = 'note';
@@ -19,17 +29,19 @@ define(function(){
         note.addEventListener('contextmenu', function(e){
             e.preventDefault();
             e.stopPropagation();
-           console.log('context', e);
         }.bind(this), false);
 
         note.addEventListener('click', function (e) {
             return this.onNoteClick(e);
         }.bind(this), false);
 
+
+
         this.note = note;
 
         this.left = left;
         this.top = top;
+        this.color = color || "#ffeb6e";
 
         //CLOSE btn
         var close = document.createElement('div');
@@ -43,10 +55,15 @@ define(function(){
         //EDIT btn
         var edit = document.createElement('div');
         edit.className = 'edit';
-        edit.setAttribute('content-editable', "");
+        edit.setAttribute('contenteditable',false);
         edit.addEventListener('keyup', function (e) {
             return this.onKeyUp(e);
         }.bind(this), false);
+
+        edit.addEventListener('blur', function(){
+            console.log('blurred');
+        });
+
         note.appendChild(edit);
         this.editField = edit;
 
@@ -60,6 +77,11 @@ define(function(){
 
         this.container = container || document.body;
         this.container.appendChild(this.note);
+
+        if(id === undefined){
+            console.log('ideeeee',id)
+            this.saveAsNew();
+        }
         return this;
     }
 
@@ -93,10 +115,10 @@ define(function(){
             this._id = val;
         },
         get text(){
-            return this.editField.innerHTML;
+            return this.editField.textContent;
         },
         set text(val){
-            this.editField.innerHTML = val;
+            this.editField.textContent = val;
         },
         get timestamp(){
             if(!("_timestamp" in this)){
@@ -153,6 +175,7 @@ define(function(){
             document.addEventListener("mouseup", this.mouseUpHandler, true);
         },
         onNoteClick: function onNoteClick() {
+            this.editField.setAttribute("contenteditable", true);
             this.editField.focus();
             getSelection().collapseToEnd();
         },
@@ -164,7 +187,11 @@ define(function(){
             this.cancelPendingSave();
             this.db.transaction(function(t){
                 t.executeSql("delete from MyNotes where id = ?", [this.id]);
-            }.bind(this));
+            }.bind(this), function(err){
+                console.log("ERROR --> ", err);
+            }, function(res) {
+                console.log('usunieto ', res);
+            });
             this.container.removeChild(this.note);
         },
         cancelPendingSave: function(){
@@ -178,7 +205,7 @@ define(function(){
             this.cancelPendingSave();
             this._saveTimer = setTimeout(function(){
                 this.save();
-            }.bind(this), 200);
+            }.bind(this), 1000);
         },
         save: function save(){
             this.cancelPendingSave();
@@ -189,14 +216,24 @@ define(function(){
             this.db.transaction(function(t){
                 t.executeSql("Update MyNotes set note = ?, timestamp = ?, left = ?, top = ?, zindex = ? where id = ?",
                     [this.text, this.timestamp, this.left, this.top, this.zIndex, this.id]);
-            }.bind(this));
+            }.bind(this), function(err){
+                console.log("ERROR --> ", err);
+            }, function(res) {
+                console.log('zapisano ', res);
+            });
         },
         saveAsNew: function saveAsNew() {
             this.timestamp = new Date().getTime();
             this.db.transaction(function(t){
-                t.executeSql("insert into MyNotes (id, note, timestamp, left, top, zindex) values(?, ?, ?, ?, ?, ?",
-                    [this.id, this.text, this.timestamp, this.left, this.top, this.zIndex])
-            }.bind(this));
+                t.executeSql("insert into MyNotes (id, note, timestamp, left, top, zindex) values(?, ?, ?, ?, ?, ?)",
+                    [lastId, this.text, this.timestamp, this.left, this.top, this.zIndex])
+            }.bind(this), function(err) {
+                if(err){
+                 return console.log('zapisano nowa ', err);
+                }
+            },function(){
+                lastId++;
+            });
         }
     };
 

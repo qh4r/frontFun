@@ -113,7 +113,7 @@ body {
     right: 0px;
     bottom: 0px;
     font-size: 0.8rem;
-    background-color: #f4e537;
+    background-color: rgba(0, 0, 0, 0.11);
     color: #000;
     border-top-width: 1px;
     border-top-style: solid;
@@ -121,3 +121,13 @@ body {
     padding: 2px;
     text-align: center;
     color: #333; }
+
+.colors {
+  display: block;
+  list-style: none;
+  font-size: 0; }
+  .colors li {
+    font-size: 1rem;
+    display: inline-block;
+    height: 25px;
+    width: 25px; }

@@ -19,7 +19,7 @@ gulp.task('default', function () {
 
 gulp.task('uglify', function() {
     return gulp.src('./js/*.js')
-        .pipe(uglify())
+        .pipe(uglify().on('error', console.log))
         .pipe(gulp.dest('./js_min/'));
 });
 
