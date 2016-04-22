@@ -33,5 +33,9 @@ define(['domReady', './addButton', './note'], function (domReady, AddButton, Not
         })
     });
 
-
+    //function loaded() {
+    //    db.transaction(function(tx){
+    //        tx.
+    //    })
+    //}
 });
