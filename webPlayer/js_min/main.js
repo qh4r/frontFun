@@ -1,0 +1,1 @@
+define(["domReady","jquery"],function(n){n(function(){console.log("dziala")})});
