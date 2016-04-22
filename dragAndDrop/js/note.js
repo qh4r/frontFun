@@ -1,4 +1,4 @@
-define(function(){
+define(['./colorPicker'],function(ColorPicker){
     var current = null, highestZ = 0;
     var lastId = 0;
 
@@ -29,6 +29,8 @@ define(function(){
         note.addEventListener('contextmenu', function(e){
             e.preventDefault();
             e.stopPropagation();
+            this.colorPicker.show();
+            this.colorPicker.focus();
         }.bind(this), false);
 
         note.addEventListener('click', function (e) {
@@ -60,10 +62,6 @@ define(function(){
             return this.onKeyUp(e);
         }.bind(this), false);
 
-        edit.addEventListener('blur', function(){
-            console.log('blurred');
-        });
-
         note.appendChild(edit);
         this.editField = edit;
 
@@ -75,11 +73,16 @@ define(function(){
         note.appendChild(timestamp);
         this.lastModified = timestamp;
 
+        this.colorPicker = new ColorPicker(['#ff5463','#9cff79','#7fd6ff', '#ffeb6e', '#b869ff', '#ffa450'],function(color){
+            this.updateColor(color)
+        }.bind(this));
+
+        this.note.appendChild(this.colorPicker.picker);
+
         this.container = container || document.body;
         this.container.appendChild(this.note);
 
         if(id === undefined){
-            console.log('ideeeee',id)
             this.saveAsNew();
         }
         return this;
@@ -214,19 +217,23 @@ define(function(){
                 delete this.dirty;
             }
             this.db.transaction(function(t){
-                t.executeSql("Update MyNotes set note = ?, timestamp = ?, left = ?, top = ?, zindex = ? where id = ?",
-                    [this.text, this.timestamp, this.left, this.top, this.zIndex, this.id]);
+                t.executeSql("Update MyNotes set note = ?, timestamp = ?, left = ?, top = ?, zindex = ?, color = ? where id = ?",
+                    [this.text, this.timestamp, this.left, this.top, this.zIndex, this.color, this.id]);
             }.bind(this), function(err){
                 console.log("ERROR --> ", err);
             }, function(res) {
                 console.log('zapisano ', res);
             });
         },
+        updateColor: function updateColor(newColor){
+            this.color = newColor;
+            this.saveCounter();
+        },
         saveAsNew: function saveAsNew() {
             this.timestamp = new Date().getTime();
             this.db.transaction(function(t){
-                t.executeSql("insert into MyNotes (id, note, timestamp, left, top, zindex) values(?, ?, ?, ?, ?, ?)",
-                    [lastId, this.text, this.timestamp, this.left, this.top, this.zIndex])
+                t.executeSql("insert into MyNotes (id, note, timestamp, left, top, zindex, color) values(?, ?, ?, ?, ?, ?, ?)",
+                    [lastId, this.text, this.timestamp, this.left, this.top, this.zIndex, this.color])
             }.bind(this), function(err) {
                 if(err){
                  return console.log('zapisano nowa ', err);
