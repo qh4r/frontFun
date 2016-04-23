@@ -18,7 +18,7 @@ body {
 
 
 .new-note-btn {
-  font-size: 1.5rem;
+  font-size: 0rem;
   padding: 10px;
   border: {
     width: 0;
@@ -27,12 +27,15 @@ body {
   background-color: $btn-background;
   color: $btn-font-color;
   position: absolute;
+  transition: all 0.2s;
+
   &:hover {
     background-color: $btn-background-active;
   }
 
   &:focus {
     outline: 0;
+    font-size: 1.0rem;
   }
 }
 
@@ -95,23 +98,30 @@ body {
 
 }
 .colors {
-  display: none;
+  display: block;
+  opacity: 0;
   list-style: none;
   position: absolute;
   right: -15px;
   bottom: 10px;
   //USUWA ODSTEP Z POMIEDZY INLIEN  BLOCKOW
   font-size: 0;
+  transition: all 0.4s;
+
   li {
     //WEWNATRZ MOZNA SPOKOJNIE PRZYWROCIC
     font-size: 1rem;
-    display: block;
+    display: none;
     height: 25px;
     width: 25px;
   }
 
   &.show {
-    display: block;
+    opacity: 1;
+
+    li {
+      display: block;
+    }
   }
 
   &:focus {

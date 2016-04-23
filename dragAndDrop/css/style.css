@@ -73,18 +73,21 @@ body {
   background-color: #ccb072; }
 
 .new-note-btn {
-  font-size: 1.5rem;
+  font-size: 0rem;
   padding: 10px;
   border-width: 0;
   -webkit-border-radius: 5px;
           border-radius: 5px;
   background-color: #333;
   color: #fff;
-  position: absolute; }
+  position: absolute;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
   .new-note-btn:hover {
     background-color: #000; }
   .new-note-btn:focus {
-    outline: 0; }
+    outline: 0;
+    font-size: 1.0rem; }
 
 .note {
   background-color: #ffeb6e;
@@ -125,18 +128,23 @@ body {
     outline: 0; }
 
 .colors {
-  display: none;
+  display: block;
+  opacity: 0;
   list-style: none;
   position: absolute;
   right: -15px;
   bottom: 10px;
-  font-size: 0; }
+  font-size: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s; }
   .colors li {
     font-size: 1rem;
-    display: block;
+    display: none;
     height: 25px;
     width: 25px; }
   .colors.show {
-    display: block; }
+    opacity: 1; }
+    .colors.show li {
+      display: block; }
   .colors:focus {
     outline: 0; }
