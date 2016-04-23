@@ -1,0 +1,26 @@
+.container {
+    background: #cc273c;
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+}
+/*DZIALA TEZ BEFORE*/
+.container:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    background: #72d4dd;
+}
+
+.box {
+    padding: 20px;
+    background: #8aff76;
+    display: inline-block;
+    width: 50%;
+    border: 1px solid #ffc350;
+    font-size: 1rem;
+    vertical-align: middle;
+}
