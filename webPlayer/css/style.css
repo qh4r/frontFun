@@ -67,3 +67,66 @@ strong, b {
 
 .float-right {
   float: right; }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none; }
+
+body {
+  font-family: Aril;
+  font-size: 13px;
+  line-height: 1.5em;
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd6b3+8,fcb866+30,fcb866+30,fcb866+70,ffd6b3+86 */
+  background: #ffd6b3;
+  /* Old browsers */
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #ffd6b3 8%, #fcb866 30%, #fcb866 30%, #fcb866 70%, #ffd6b3 86%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #ffd6b3), color-stop(30%, #fcb866), color-stop(30%, #fcb866), color-stop(70%, #fcb866), color-stop(86%, #ffd6b3));
+  background: linear-gradient(to right, #ffd6b3 8%, #fcb866 30%, #fcb866 30%, #fcb866 70%, #ffd6b3 86%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd6b3', endColorstr='#ffd6b3',GradientType=1 );
+  /* IE6-9 */ }
+
+.container {
+  width: 330px;
+  min-height: 400px;
+  background-color: #666;
+  overflow: auto;
+  margin: 20px auto;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 10px 8px -8px #666;
+          box-shadow: 0 10px 8px -8px #666; }
+  .container #audio-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 40px; }
+    .container #audio-image .cover {
+      width: 100%; }
+
+#audio-info {
+  text-align: center; }
+  #audio-info .artist {
+    font-weight: bold; }
+
+input#volume {
+  width: 95%;
+  margin-left: 2%;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  margin-bottom: 20px;
+  height: 1px;
+  background: #DDD; }
+  input#volume slider-thumb {
+    -webkit-appearance: none !important;
+       -moz-appearance: none !important;
+            appearance: none !important;
+    background-image: url(../images/knob.png) no-repeat;
+    height: 12px;
+    width: 12px; }
