@@ -75,7 +75,7 @@ strong, b {
   outline: none; }
 
 body {
-  font-family: Aril;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5em;
   color: #fff;
@@ -127,6 +127,71 @@ input#volume {
     -webkit-appearance: none !important;
        -moz-appearance: none !important;
             appearance: none !important;
-    background-image: url(../images/knob.png) no-repeat;
+    background-image: url(../images/knob.png);
+    background-repeat: no-repeat;
     height: 12px;
     width: 12px; }
+
+.buttons {
+  width: 90%;
+  display: block;
+  margin: 15px auto 15px 23px;
+  overflow: auto; }
+  .buttons #play, .buttons #pause, .buttons #stop, .buttons #previous, .buttons #next {
+    width: 70px;
+    height: 70px;
+    float: left; }
+    .buttons .hide#play, .buttons .hide#pause, .buttons .hide#stop, .buttons .hide#previous, .buttons .hide#next {
+      display: none; }
+  .buttons #play {
+    margin-left: -2px;
+    background: url(../images/play.png) no-repeat; }
+  .buttons #pause {
+    margin-left: -2px;
+    background: url(../images/pause.png) no-repeat; }
+  .buttons #stop {
+    margin-left: 2px;
+    background: url(../images/stop.png) no-repeat; }
+  .buttons #previous {
+    margin-top: 15px;
+    background: url(../images/prev.png) no-repeat; }
+  .buttons #next {
+    margin-top: 15px;
+    float: right;
+    background: url(../images/next.png) no-repeat; }
+
+#tracker {
+  position: relative; }
+
+#progress-bar {
+  width: 80%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  margin-top: 9px;
+  height: 10px;
+  background: url(../images/progress_bg.png) no-repeat;
+  float: left; }
+
+#progress {
+  background: url(../images/progress.png) no-repeat;
+  height: 10px;
+  display: inline-block; }
+
+#duration {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 4px 8px;
+  background-color: #444;
+  -webkit-border-radius: 5px;
+          border-radius: 5px; }
+
+#playlist {
+  list-style: none; }
+  #playlist li {
+    cursor: pointer;
+    margin: 5px; }
+    #playlist li.active {
+      font-weight: bold;
+      padding: 3px;
+      background-color: rgba(252, 184, 102, 0.59); }

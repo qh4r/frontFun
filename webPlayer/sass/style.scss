@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: Aril;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.5em;
   color: #fff;
@@ -64,8 +64,100 @@ input#volume {
 
   slider-thumb {
     appearance: none !important;
-    background-image: url(../images/knob.png) no-repeat;
+    background-image: url(../images/knob.png);
+    background-repeat: no-repeat;
     height: 12px;
     width: 12px;
+  }
+}
+
+.buttons {
+  width: 90%;
+  display: block;
+  margin: 15px auto 15px 23px;
+  overflow: auto;
+
+  %part_button {
+    width: 70px;
+    height: 70px;
+    float: left;
+    &.hide {
+      display: none;
+    }
+  }
+
+  #play {
+    @extend %part_button;
+    margin-left: -2px;
+    background: url(../images/play.png) no-repeat;
+  }
+
+  #pause {
+    @extend %part_button;
+    margin-left: -2px;
+    background: url(../images/pause.png) no-repeat;
+  }
+
+  #stop {
+    @extend %part_button;
+    margin-left: 2px;
+    background: url(../images/stop.png) no-repeat;
+  }
+
+  #previous {
+    @extend %part_button;
+    margin-top: 15px;
+    background: url(../images/prev.png) no-repeat;
+  }
+
+  #next {
+    @extend %part_button;
+    margin-top: 15px;
+    float: right;
+    background: url(../images/next.png) no-repeat;
+  }
+}
+
+#tracker {
+  position: relative;
+}
+
+#progress-bar {
+  width: 80%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  margin-top: 9px;
+  height: 10px;
+  background: url(../images/progress_bg.png) no-repeat;
+  float: left;
+}
+
+#progress {
+  background: url(../images/progress.png) no-repeat;
+  height: 10px;
+  display: inline-block;
+}
+
+#duration {
+  position: absolute;
+  top: 0;
+  right:10px;
+  padding: 4px 8px;
+  background-color: #444;
+  border-radius: 5px;
+}
+
+#playlist {
+  list-style: none;
+
+  li {
+    cursor: pointer;
+    margin: 5px;
+
+    &.active {
+      font-weight: bold;
+      padding: 3px;
+      background-color: rgba(252, 184, 102, 0.59);
+    }
   }
 }
