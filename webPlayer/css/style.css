@@ -173,6 +173,8 @@ input#volume {
   float: left; }
 
 #progress {
+  position: relative;
+  top: -4px;
   background: url(../images/progress.png) no-repeat;
   height: 10px;
   display: inline-block; }
