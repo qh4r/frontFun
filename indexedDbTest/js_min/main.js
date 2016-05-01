@@ -1,1 +1,1 @@
-define(["domReady"],function(n){n(function(){console.log("dziala")})});
+define(["domReady","bootstrap"],function(o){o(function(){$("#new-customer-form").on("submit",function(o){o.preventDefault()}),console.log("dziala")})});

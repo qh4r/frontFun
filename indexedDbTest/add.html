@@ -1,15 +1,78 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Indexed DB  add new</title>
+
+    <title>Indexed db add customer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
 </head>
+
 <body>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IndexedDb Fun Nowy</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Klienci</a></li>
+                <li><a href="add.html">Dodaj Klienta</a></li>
+                <li><a class="danger" href="#">Usuń klientów</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dodaj Klienta</h1>
+
+            <form id="new-customer-form">
+                <div class="form-group">
+                    <label for="customerName">Imie</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="Imie">
+                </div>
+                <div class="form-group">
+                    <label for="customerSurname">Nazwisko</label>
+                    <input type="text" class="form-control" id="customerSurname" placeholder="Nazwisko">
+                </div>
+                <div class="form-group">
+                    <label for="customerMail">E-mail</label>
+                    <input type="email" class="form-control" id="customerMail" placeholder="E-mail">
+                </div>
+
+                <button type="submit" class="btn btn-default">Potwiedź</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
+
 </body>
 </html>
