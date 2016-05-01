@@ -60,10 +60,29 @@ input#volume {
   appearance: none !important;
   margin-bottom: 20px;
   height: 1px;
-  background: #DDD;
+  background-color: #DDD;
 
-  slider-thumb {
-    appearance: none !important;
+  //border-top: 5px solid transparent;
+  //border-bottom: 5px solid transparent;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-image: url(../images/knob.png);
+    background-repeat: no-repeat;
+    height: 12px;
+    width: 12px;
+  }
+
+  &::-ms-thumb {
+    -webkit-appearance: none !important;
+    background-image: url(../images/knob.png);
+    background-repeat: no-repeat;
+    height: 12px;
+    width: 12px;
+  }
+
+  &::-moz-range-thumb {
+    -webkit-appearance: none !important;
     background-image: url(../images/knob.png);
     background-repeat: no-repeat;
     height: 12px;
