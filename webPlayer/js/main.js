@@ -2,12 +2,21 @@ define(['domReady', 'jquery'], function (domReady) {
     domReady(function () {
         var controls = {
             playButton: $('#play'),
+            nextButton: $('#next'),
+            previousButton: $('#previous'),
             pauseButton: $('#pause'),
             stopButton: $('#stop'),
             volumeBar: $('#volume'),
             duration: $('#duration'),
-            progress: $('#progress')
+            progress: $('#progress'),
+            playlist: $('#playlist li'),
+            cover: $('#audio-image img')[0]
         };
+
+        controls.audioInfo = $('#audio-info');
+        controls.artist = $(controls.audioInfo).find('.artist')[0];
+        controls.title = $(controls.audioInfo).find('.title')[0];
+        console.log(controls)
         initializeAudio(controls);
     });
 
@@ -23,6 +32,8 @@ define(['domReady', 'jquery'], function (domReady) {
 
     function showDuration(audio, duration, progress) {
         var value = 0;
+        duration.text('0:00');
+        progress.css('width', '0%');
 
         audio.addEventListener('timeupdate', function (time) {
             var s = parseInt(audio.currentTime % 60);
@@ -37,16 +48,69 @@ define(['domReady', 'jquery'], function (domReady) {
         });
     }
 
-    function setNewAudio(element) {
-        var song= element.attr && element.attr('song');
-        var title= element.text && element.text();
-        var audio = new Audio('media/sch_theme.mp3');
-        return audio;
+    function setNewAudio(element, titleElement, artistElement, coverElement, current) {
+        var title = element.innerText && element.innerText;
+        var song = element.getAttribute('data-song');
+        var source = element.getAttribute('data-source');
+        var cover = element.getAttribute('data-cover');
+        var artist = element.getAttribute('data-artist');
+
+        // if(current){
+        //     current.className = "";
+        // }
+        current = element;
+        element.className = "active";
+
+        titleElement.innerText = title;
+        artistElement.innerText = artist;
+        coverElement.setAttribute('src', cover);
+        var audio = new Audio(source);
+        return {
+            audio: audio,
+            current: current
+        };
     }
 
     function initializeAudio(controls) {
 
-        var audio = setNewAudio({});
+        function startPlayingElement(element) {
+            console.log(element);
+            var wasPaused = audio.paused;
+            controls.playlist.removeClass('active');
+            audio.pause();
+            var result = setNewAudio(element, controls.title, controls.artist, controls.cover, current);
+            current = result.current;
+            audio = result.audio;
+            showDuration(audio, controls.duration, controls.progress);
+            if (!wasPaused) {
+                audio.play();
+            }
+        }
+
+        var current = {};
+        var result = setNewAudio(controls.playlist[0] || {}, controls.title, controls.artist, controls.cover, current);
+        current = result.current;
+        audio = result.audio;
+
+        controls.playlist.on('click', function () {
+            startPlayingElement(this);
+        });
+
+        controls.nextButton.on('click', function () {
+            var next = $(current).next();
+            if (!next || !next.length) {
+                next = controls.playlist;
+            }
+            startPlayingElement(next[0]);
+        });
+
+        controls.previousButton.on('click', function () {
+            var next = $(current).prev();
+            if (!next || !next.length) {
+                next = controls.playlist;
+            }
+            startPlayingElement(next[next.length - 1]);
+        });
 
         controls.playButton.on('click', function () {
             audio.play();
