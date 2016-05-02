@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Geolocation Tests</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Odległość</h1>
+    </header>
+    <p>
+        <strong>Pozycja początkowa</strong>
+        <br />
+        <span id="startLatitude">Pobieram...</span>
+        <span id="startLongitude">Pobieram...</span>
+    </p>
+    <p>
+        <strong>Aktualna pozycja</strong>
+        <br />
+        <span id="currentLatitude">Pobieram...</span>
+        <span id="currentLongitude">Pobieram...</span>
+    </p>
+    <p>
+        <strong>Odległość</strong>
+        <br />
+        <span id="distance">0.0</span>km
+    </p>
+    <p>
+        <button id="startBtn">Rozpocznij Pomiar</button>
+        <button class="hide" id="stopBtn">Przerwij Pomiar</button>
+    </p>
+    <footer><span>&copy qh4r</span></footer>
+</div>
+<script type="text/javascript" data-main="app.js" src="lib/require.js"></script>
+</body>
+</html>

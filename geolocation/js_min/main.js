@@ -1,0 +1,1 @@
+define(["domReady","jquery"],function(o){o(function(){$("#startBtn").on("click",function(){console.log("start")}),$("#stopBtn").on("click",function(){console.log("stop")}),console.log("dziala")})});

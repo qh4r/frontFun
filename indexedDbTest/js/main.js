@@ -108,6 +108,7 @@ define(['domReady', 'bootstrap'], function (domReady) {
                         "<td><span>" + cursor.value.name + "</span></td>" +
                         "<td><span>" + cursor.value.surname + "</span></td>" +
                         "<td>" + cursor.value.email + "</td>" +
+                        //DONT EVER USE ONCLICK AGAIN &^*&@^#*@# -- FORCES GLOBAL
                         "<td>" + "<a onclick='removeCustomer("+cursor.value.id+")'>USUN</a>" + "</td>" +
                     "</tr>";
                 cursor.continue();

@@ -1,0 +1,48 @@
+@import "modules/reset";
+@import "modules/base";
+
+body {
+  background-color: #EEEEEE;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+}
+
+button {
+  font-size: 1.6rem;
+  padding: 3px 10px;
+
+  &.hide  {
+    display: none;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  header {
+    background-color: #444;
+    padding: 6px;
+
+    h1 {
+      color: #fff;
+      font-size: 1.8em;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  footer {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+}
+
+
