@@ -30,6 +30,10 @@ define(['domReady', 'bootstrap'], function (domReady) {
             addCustomer(db);
         });
 
+        $('#delete-customers').on('click', function(){
+            window.indexedDB.deleteDatabase('customers');
+            window.location.href = 'index.html';
+        });
         console.log("dziala");
     });
 
@@ -71,6 +75,22 @@ define(['domReady', 'bootstrap'], function (domReady) {
     }
 
     function showCustomers(db){
+        window.removeCustomer = function removeCustomer(id){
+            console.log(id);
+            var transaction = db.transaction(['customers'], "readwrite");
+            var store = transaction.objectStore("customers");
+
+            var req = store.delete(id);
+
+            req.onsuccess = function(){
+                $('#row'+id).remove();
+            };
+
+            req.onerror = function(err){
+                console.log('error -> ', err)
+            }
+        }
+
         var transaction = db.transaction(['customers'], 'readonly');
         var store = transaction.objectStore('customers');
         var storeIndex = store.index('names');
@@ -81,13 +101,14 @@ define(['domReady', 'bootstrap'], function (domReady) {
         storeIndex.openCursor().onsuccess = function(e){
             var cursor = e.target.result;
             console.log(cursor);
+            var rowId = 'row'+cursor.value.id;
             if(cursor) {
-                output += "<tr>" +
+                output += "<tr id='"+rowId+"'>" +
                         "<td>" + cursor.value.id + "</td>" +
                         "<td><span>" + cursor.value.name + "</span></td>" +
                         "<td><span>" + cursor.value.surname + "</span></td>" +
                         "<td>" + cursor.value.email + "</td>" +
-                        "<td>" + "<a href=''>USUN</a>" + "</td>" +
+                        "<td>" + "<a onclick='removeCustomer("+cursor.value.id+")'>USUN</a>" + "</td>" +
                     "</tr>";
                 cursor.continue();
             }
@@ -96,4 +117,5 @@ define(['domReady', 'bootstrap'], function (domReady) {
         }
 
     }
+
 });
