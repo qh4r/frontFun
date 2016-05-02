@@ -1,2 +1,10 @@
 @import "modules/reset";
 @import "modules/base";
+
+#add-alert {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}

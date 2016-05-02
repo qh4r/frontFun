@@ -67,3 +67,8 @@ strong, b {
 
 .float-right {
   float: right; }
+
+#add-alert {
+  display: none; }
+  #add-alert.visible {
+    display: block; }
