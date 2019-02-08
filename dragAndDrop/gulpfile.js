@@ -10,11 +10,11 @@ var uglify = require('gulp-uglify');
 
 gulp.task('default', function () {
     livereload.listen();
-    gulp.watch('./*.html', ['reload']);
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./css/*.css', ['reload']);
-    gulp.watch('./js/*.js', ['uglify']);
-    gulp.watch('./js_min/*.js', ['reload']);
+    gulp.watch('./*.html', gulp.series('reload'));
+    gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+    gulp.watch('./css/*.css', gulp.series('reload'));
+    gulp.watch('./js/*.js', gulp.series('uglify'));
+    gulp.watch('./js_min/*.js', gulp.series('reload'));
 })
 
 gulp.task('uglify', function() {
